@@ -130,8 +130,8 @@ function afterjQueryLoad() {
   // jQuery .reduce() plugin (from https://bugs.jquery.com/ticket/1886)
   jQuery.fn.reduce = [].reduce
 
-  $('html').attr('lang', 'en')                       // set document language
-  if (window.location.search.match(/\bDEBUG\b/i)) {  // set 'class=DEBUG'
+  $('html').attr('lang', 'en')                 // set document language
+  if (location.search.match(/\bDEBUG\b/i)) {   // set 'class=DEBUG'
     $('html').addClass('DEBUG')
   }
 
@@ -431,10 +431,8 @@ function main($) {
   })
 
   // After page load: Jump to hash location.
-  if (window.location.hash) {
-    setTimeout(() => {
-      window.location.href = window.location.hash
-    }, 100)
+  if (location.hash) {
+    setTimeout(() => { location.href = location.hash }, 100)
   }
 
   // Return pixel height of 1rem * line-height in the root element.
@@ -456,7 +454,7 @@ function main($) {
          ) {
         const $c = $('<span style="display:inline-block;font-size:0;outline:4px solid green"></span>')
           .prependTo(e)
-        return $c[0].getBoundingClientRect().top + window.scrollY
+        return $c[0].getBoundingClientRect().top + scrollY
       }
     }
     return undefined
