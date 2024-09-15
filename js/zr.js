@@ -6,17 +6,6 @@
 // Remove 'Javascript missing.' warning.
 document.documentElement.id = 'js'
 
-// From: https://codereview.stackexchange.com/a/132140/197081
-{
-  String.prototype.rot13 = function () {
-    'use strict'
-    return this.split('').map(x => lookup[x] || x).join('')
-  }
-  const input  = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('')
-  const output = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'.split('')
-  const lookup = input.reduce((a, k, i) => Object.assign(a, {[k]: output[i]}), {})
-}
-
 function escapeHtml(text) {
   'use strict'
   return text.replace(/["&<>]/g, a => (
@@ -146,47 +135,16 @@ function afterjQueryLoad() {
     $('html').addClass('DEBUG')
   }
 
-  include(`${scriptPath}showdown.min.js`, afterShowdownLoad)
-}
-
-// Enable 'Show page' button when showdown has loaded.
-function afterShowdownLoad() {
-  'use strict'
-  const $elem = $('textarea[disabled]:first')
-  if ($elem.is('[rot13]')) {
-    const $btn = $('<button>Show page</button>').prependTo('body')
-    $btn.focus()
-      .on('click', () => {
-        // Display (CSS only) wait animation.
-        $btn.html('<div class="loading"><div></div><div></div><div></div><div></div></div>')
-        // Run main() then remove button.
-        setTimeout(() => {
-          main(window.jQuery)
-          $btn.remove()
-        }, 100)
-      })
-  } else {
-    main(window.jQuery)
-  }
+  include(`${scriptPath}showdown.min.js`, () => { main(jQuery) })
 }
 
 /******************************************************************************/
 
-// Load Javascript or CSS, invoke callback function when loaded.
+// Load Javascript and invoke callback function onload.
 function include(url, callback) {
   'use strict'
-  const ext = url.split('.').pop()
-  let tag
-  if (ext === 'css') {               // CSS
-    tag = document.createElement('link')
-    tag.rel = 'stylesheet'
-    tag.href = url
-  } else if (ext === 'js') {         // Javascript
-    tag = document.createElement('script')
-    tag.src = url
-  } else {
-    throw TypeError(`include(): Unknown file type '.${ext}'`)
-  }
+  let tag = document.createElement('script')
+  tag.src = url
   tag.async = true
   tag.onload = callback
   document.head.appendChild(tag)
@@ -289,44 +247,13 @@ function getMarkdownLinks(md) {
 function main($) {
   'use strict'
   const $elem = $('textarea[disabled]:first')
-  const [text, refs] = getMarkdownLinks(($elem.text() || '')[
-    $elem.is('[rot13]') ? 'rot13' : 'toString'  // rot13 decode
-  ]())
+  const [text, refs] = getMarkdownLinks(($elem.text() || '').toString())
 
   // Define Showdown extensions.
-  showdown.extension('tlh', {  // {...} = Klingon
-    type: 'lang',
-    regex: /\{([^}]+)\}/g,
-    replace: (_, tlh) => {
-      // FIXME: Hyphenation of Klingon.
-      return '<b lang=tlh>' +
-        // Insert <nobr> around leading '-' & following word.
-        tlh.replace(/(-[^< ]+)/, '<nobr>$1</nobr>') +
-        '</b>'
-    },
-  })
-  // Translation example. Use «...» for English or «:iso:...» for ISO
-  // language.
-  showdown.extension('en', {
-    type: 'lang',
-    filter: md => md.replace(/«([^»]+)»/g, (_, md) => {
-      let lang = 'en'
-      md = md.replace(/^:([^:\s]+):/, (_, prefix) => {
-        lang = prefix
-        return ''
-      })
-      return `<i lang="${lang}" class="transl">${md}</i>`
-    }),
-  })
   showdown.extension('sup', {
     type: 'lang',
     regex: /\^([^^]+)\^/g,
     replace: '<sup>$1</sup>',
-  })
-  showdown.extension('ref', {
-    type: 'lang',
-    regex: /‹([^›]+)›/g,
-    replace: '<mark>$1</mark>',
   })
   // [#...] -> <a id="..."></a>. IDs must not contain space, nor any of '.:[]'
   // (colon and period interferes with CSS styling). Note: Spaces and tabs
@@ -379,7 +306,7 @@ function main($) {
   })
   // https://github.com/showdownjs/showdown/wiki/Showdown-Options
   const converter = new showdown.Converter({
-    extensions        : ['id', 'table','tlh', 'en', 'ref', 'sup'],
+    extensions        : ['id', 'table', 'sup'],
     noHeaderId        : true,
     simplifiedAutoLink: true,
     strikethrough     : true,
@@ -510,7 +437,6 @@ function main($) {
     }, 100)
   }
 
-
   // Return pixel height of 1rem * line-height in the root element.
   function getRhythm(e = ':root') {
     return $('<p style="position:absolute">​</p>').appendTo(e).hide().height()
@@ -531,7 +457,6 @@ function main($) {
         const $c = $('<span style="display:inline-block;font-size:0;outline:4px solid green"></span>')
           .prependTo(e)
         return $c[0].getBoundingClientRect().top + window.scrollY
-
       }
     }
     return undefined
@@ -555,9 +480,7 @@ function main($) {
           i += 1
         }
       }
-
-    });
-  }, 0);
-
+    })
+  }, 0)
 }
 /*[eof]*/
