@@ -153,7 +153,7 @@ function afterjQueryLoad() {
 // Enable 'Show page' button when showdown has loaded.
 function afterShowdownLoad() {
   'use strict'
-  const $elem = $('[markdown]:first')  // 1st element with attr 'markdown'
+  const $elem = $('textarea[disabled]:first')
   if ($elem.is('[rot13]')) {
     const $btn = $('<button>Show page</button>').prependTo('body')
     $btn.focus()
@@ -289,7 +289,7 @@ function getMarkdownLinks(md) {
 
 function main($) {
   'use strict'
-  const $elem = $('[markdown]:first')  // 1st element with attr 'markdown'
+  const $elem = $('textarea[disabled]:first')
   const [text, refs] = getMarkdownLinks(($elem.text() || '')[
     $elem.is('[rot13]') ? 'rot13' : 'toString'  // rot13 decode
   ]())
