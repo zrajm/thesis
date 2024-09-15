@@ -75,9 +75,8 @@ function insertIdIntoParentElement() {
 function insertTableOfContent() {
   'use strict'
   const $toc = $('toc')
-  if ($toc.length === 0) {                     // abort if <toc> not found
-    return
-  }
+  if ($toc.length === 0) { return }            // abort if <toc> not found
+
   const tocAttrs = $.map(
     $toc.prop('attributes'),
     x => ` ${x.name}` +
@@ -87,14 +86,10 @@ function insertTableOfContent() {
   // Create ToC item from '<h#>...</h#>' element.
   function tocItem($h) {
     const $i = $h.clone()
-    $i.find('a,err').replaceWith(function () { // strip <err> and <a> tags,
-      return $(this).contents()                //    but keep their content
-    })
-    $i.find('[id],[name]').replaceWith(        // strip 'id' and 'name'
-      function () {                            //   attributes
-        return $(this).removeAttr('id').removeAttr('name')
-      }
-    )
+    $i.find('a').replaceWith(                  // strip <a> tags,
+      () => $(this).contents())                //    but keep their content
+    $i.find('[id],[name]').replaceWith(        // strip 'id' and 'name' attr
+      () => $(this).removeAttr('id').removeAttr('name'))
     return $i.html()
   }
   let level = 0
@@ -134,7 +129,6 @@ function afterjQueryLoad() {
   if (location.search.match(/\bDEBUG\b/i)) {   // set 'class=DEBUG'
     $('html').addClass('DEBUG')
   }
-
   include(`${scriptPath}showdown.min.js`, () => { main(jQuery) })
 }
 
@@ -143,11 +137,13 @@ function afterjQueryLoad() {
 // Load Javascript and invoke callback function onload.
 function include(url, callback) {
   'use strict'
-  let tag = document.createElement('script')
-  tag.src = url
-  tag.async = true
-  tag.onload = callback
-  document.head.appendChild(tag)
+  document.head.appendChild(
+    Object.assign(document.createElement('script'), {
+      src: url,
+      async: true,
+      onload: callback,
+    })
+  )
 }
 
 // Get Javascript path. (Path name relative to the page the script was included
@@ -328,10 +324,9 @@ function main($) {
   })
 
   // Replace remaining [TEXT] and [TEXT][…] with links.
-  const existingId = $('[id]').reduce((acc, elem) => {
-    acc[ $(elem).attr('id') ] = true
-    return acc
-  }, {})
+  const existingId = $('[id]').reduce(
+    (acc, elem) => Object.assign(acc, { [elem.id]: true }), {})
+
   $('body *:not(script)').contents().each((_, node) => {
     if (node.nodeType !== 3) {         // only process text nodes
       return
@@ -424,11 +419,9 @@ function main($) {
   })(document.body)
 
   /* If table cell contains single link: Allow click/click on whole cell. */
-  $('td:has(>a[href]:only-child),th:has(>a[href]:only-child)').hover(function () {
-    $(this).toggleClass('hover')
-  }).click(e => {
-    $(e.currentTarget).children()[0].click()  /* non-jquery click */
-  })
+  $('td:has(>a[href]:only-child),th:has(>a[href]:only-child)')
+    .hover(() => { $(this).toggleClass('hover') })
+    .click(e  => { $(e.currentTarget).children()[0].click() })
 
   // After page load: Jump to hash location.
   if (location.hash) {
