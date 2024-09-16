@@ -6,6 +6,7 @@
 ** Use some of the pretty CSS from Toki Pona Syllabics
 ** Use baremark?
 ** Remove jQuery dependency?
-** Handle metadata at beginning of Markdown
 * FINISHED
+** DONE Handle metadata at beginning of Markdown
+   CLOSED: [2024-09-16 Mon 09:07]
 * [eof]

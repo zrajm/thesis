@@ -203,7 +203,13 @@ function getMarkdownLinks(md) {
     ))
   }
   let refs = {}
-  const newMd = md.trim().split(/\n{2,}/).map(paragraph => {
+  let head = {}
+  const newMd = md.trim().split(/\n{2,}/).map((paragraph, i) => {
+    if (i === 0) {
+      const x = matchSplit(paragraph, /(\w+):[ \t]+(.*)(?:\n|$)/y)
+      head = Object.fromEntries(x.map(([x, y]) => [x.toLowerCase(), y]))
+      if (x.length) { return }
+    }
     // Remove paragraphs containing only link references, and store
     // these in 'refs' to be appended to the end of the document.
     let fail = false
@@ -235,7 +241,17 @@ function getMarkdownLinks(md) {
         : `[${name}]: ${link}`
     }).join('\n')
   ).join('\n\n')
-  return [newMd, refs]
+  return [head, newMd, refs]
+}
+
+function matchSplit(txt, regex) {
+  let i, r, a = []
+  if (!regex.sticky) { regex = RegExp(regex, 'y') }
+  while ((r = regex.exec(txt))) {
+    i = regex.lastIndex
+    a.push((r ?? []).slice(1))
+  }
+  return i === txt.length ? a : []
 }
 
 /******************************************************************************/
@@ -243,7 +259,7 @@ function getMarkdownLinks(md) {
 function main($) {
   'use strict'
   const $elem = $('textarea[disabled]:first')
-  const [text, refs] = getMarkdownLinks(($elem.text() || '').toString())
+  let [head, text, refs] = getMarkdownLinks($elem[0].value || '')
 
   // Define Showdown extensions.
   showdown.extension('sup', {
