@@ -271,6 +271,10 @@ function main($) {
     + (cred.length ? `<h2>${cred.join(', ')}</h2>` : '')
     + `</hgroup>` + text
 
+  if (head.favicon) {
+    $(document.head).append(`<link rel=icon href="${head.favicon}" sizes=any>`)
+  }
+
   // Define Showdown extensions.
   showdown.extension('sup', {
     type: 'lang',
