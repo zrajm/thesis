@@ -261,6 +261,11 @@ function main($) {
   const $elem = $('textarea[disabled]:first')
   let [head, text, refs] = getMarkdownLinks($elem[0].value || '')
   const cred = [head.author, head.date].filter(x => x)
+  document.title = head.title.replace(/<br>/g, ' ')
+    + (cred.length ? ' (' : '')
+    + [(head.author ? `by ${head.author}` : ''),
+       (head.date ? head.date : '')].filter(x => x).join(', ')
+    + (cred.length ? ')' : '')
   text = `<hgroup notoc>`
     + (head.title  ? `<h1>${head.title}</h1>`      : '')
     + (cred.length ? `<h2>${cred.join(', ')}</h2>` : '')
