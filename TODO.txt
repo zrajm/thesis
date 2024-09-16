@@ -1,0 +1,11 @@
+-*- org -*-
+
+* Thesis content
+* Webpage Design
+** Prettify straight quotes
+** Use some of the pretty CSS from Toki Pona Syllabics
+** Use baremark?
+** Remove jQuery dependency?
+** Handle metadata at beginning of Markdown
+* FINISHED
+* [eof]
