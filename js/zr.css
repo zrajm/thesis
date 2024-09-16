@@ -249,7 +249,7 @@ body {
 p { text-align: justify; }
 
 /***** Headings *****/
-[title] { text-align: center; }
+hgroup > * { text-align: center; }
 h1 {
   --push: calc(1em * .275); /* push down baseline to grid */
   margin-top: calc(var(--vgrid) * 2 + var(--push));

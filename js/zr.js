@@ -96,9 +96,9 @@ function insertTableOfContent() {
   let html = ''
   $('h1,h2,h3,h4,h5,h6,h7').each((_, h) => {
     const $h = $(h)
-    if ($h.attr('title') === '' ||   // skip if 'title' or 'notoc'
-        $h.attr('notoc') === '' ||   //   attribute or 'id=toc'
-        $h.attr('id') === 'toc') {   //   is used
+    if ($h.attr('title') === '' ||      // skip if 'title' or 'notoc'
+        $h.closest('[notoc]').length || // attribute or 'id=toc'
+        $h.attr('id') === 'toc') {      //   is used
       return
     }
     const num = $h.prop('tagName').match(/\d$/)[0]
@@ -260,6 +260,11 @@ function main($) {
   'use strict'
   const $elem = $('textarea[disabled]:first')
   let [head, text, refs] = getMarkdownLinks($elem[0].value || '')
+  const cred = [head.author, head.date].filter(x => x)
+  text = `<hgroup notoc>`
+    + (head.title  ? `<h1>${head.title}</h1>`      : '')
+    + (cred.length ? `<h2>${cred.join(', ')}</h2>` : '')
+    + `</hgroup>` + text
 
   // Define Showdown extensions.
   showdown.extension('sup', {
