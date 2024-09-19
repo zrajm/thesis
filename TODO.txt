@@ -1,11 +1,52 @@
 -*- org -*-
 
+* Look into
+** TODO Description of STSwrite
+** TODO Principles on what construes a good writing system
+   (As opposed to a transcription system)
+** TODO When was Si5s version 2 created?
+   Add ASLwrite Si5s and Si5s version 2 to this tree. (Also add a vertical
+   timeline to the image.)
+
+   ht2024/pdf/miller-2001-page_16.png
+** TODO Zotero for source references?
+** TODO Compare Tanada & Arnold with Basbøll pagragraph technique
+   http://secondlanguage.blogspot.com/p/40-paragraphs.html
 * Thesis content
+** STSwrite description (pedagogically)
+*** Handshapes
+*** Perspective
+*** Motion
+*** ‘Diacritics’ (flutter, wave etc.)
+** What makes a writing system good?
+*** Existing transcription systems
+*** Existing writing systems
+*** Sutton SignWriting
+**** Why is it good/bad?
+** ASLwrite history
+*** Si5s split
+*** Si5s -> ASLwrite
+** Difference between writing & transcription
+** Evaluate of effectiveness of writing system?
+*** Adlam experiences?
+** Why is a writing system needed?
+*** Quoting the original language
+*** Different than video recordings
+*** Useful for learning (reading books)
+*** No need for translating to hearing language
+*** Visibility of sign language in society
+*** Other ppl arguing for sign language writing systems
+**** Wallin's dedication quote from Polysyntetiska tecken
+** Standardized 'spelling'
 * Webpage Design
 ** Prettify straight quotes
+   Opening quotes are (always?) followed by letter or digit.
+
+   [ (\[]“
 ** Use some of the pretty CSS from Toki Pona Syllabics
 ** Use baremark?
 ** Remove jQuery dependency?
+** Vertical rhythm?
 * FINISHED
 ** DONE Handle metadata at beginning of Markdown
    CLOSED: [2024-09-16 Mon 09:07]
