@@ -1,7 +1,7 @@
 /*-*- js-indent-level: 2 -*-*/
 /*jshint esversion: 9, asi: true, strict: true, browser: true, jquery: true,
   devel: false */
-/*global showdown */
+/*global baremark */
 
 // Remove 'Javascript missing.' warning.
 document.documentElement.id = 'js'
@@ -129,7 +129,10 @@ function afterjQueryLoad() {
   if (location.search.match(/\bDEBUG\b/i)) {   // set 'class=DEBUG'
     $('html').addClass('DEBUG')
   }
-  include(`${scriptPath}showdown.min.js`, () => { main(jQuery) })
+  include(`${scriptPath}baremark.js`, () => {
+    baremark.add(/\[#([^.:\[\]\s]+)\][\t ]*/g, '<a id="$1"></a>')
+    main(jQuery)
+  })
 }
 
 /******************************************************************************/
@@ -261,7 +264,7 @@ function main($) {
   const $elem = $('textarea[disabled]:first')
   let [head, text, refs] = getMarkdownLinks($elem[0].value || '')
   const cred = [head.author, head.date].filter(x => x)
-  document.title = head.title.replace(/<br>/g, ' ')
+  document.title = (head.title||'').replace(/<br>/g, ' ')
     + (cred.length ? ' (' : '')
     + [(head.author ? `by ${head.author}` : ''),
        (head.date ? head.date : '')].filter(x => x).join(', ')
@@ -269,79 +272,13 @@ function main($) {
   text = `<hgroup notoc>`
     + (head.title  ? `<h1>${head.title}</h1>`      : '')
     + (cred.length ? `<h2>${cred.join(', ')}</h2>` : '')
-    + `</hgroup>` + text
+    + `</hgroup>\n\n` + text
 
   if (head.favicon) {
     $(document.head).append(`<link rel=icon href="${head.favicon}" sizes=any>`)
   }
 
-  // Define Showdown extensions.
-  showdown.extension('sup', {
-    type: 'lang',
-    regex: /\^([^^]+)\^/g,
-    replace: '<sup>$1</sup>',
-  })
-  // [#...] -> <a id="..."></a>. IDs must not contain space, nor any of '.:[]'
-  // (colon and period interferes with CSS styling). Note: Spaces and tabs
-  // following the tag are also stripped, but not newline (as this can cause a
-  // mess inside tables). If you put a [#...] in a paragraph of its own you'll
-  // get an empty paragraph with a single <a> tag in it!)
-  showdown.extension('id', {
-    type: 'lang',
-    regex: /\[#([^.:\[\]\s]+)\][\t ]*/g,
-    replace: '<a id="$1"></a>',
-  })
-  // Table in '| xxx | yyy' format. Cell separator ('|') may be surrounded by
-  // space. Rows start with '|', but do not end in '|' (unless you want extra
-  // empty table cells at the end of the row). Last cell have 'colspan'
-  // attribute added if needed to make all rows equally long. Use '>' first
-  // in a cell to add attribute 'indent' to that cell.
-  showdown.extension('table', {
-    type: 'lang',
-    regex: /(\n{2,})((?:[ ]*\|.*\n??)+)(?=\n{2,})/g,
-    replace: (_, pre, md) => {
-      function processCell(md, colNum, rowCols, maxCols) {
-        let attr = ''
-        // If there is leading '>', add attribute 'indent'.
-        const newMd = md.replace(/^>\s*/, '')
-        if (newMd !== md) {
-          attr += ' indent'
-        }
-        // If last cell in row add attribute 'colspan' if needed.
-        if (colNum === rowCols && colNum < maxCols) {
-          attr += ` colspan=${maxCols - rowCols + 1}`
-        }
-        return `<td${attr}>${newMd}`
-      }
-      // Split markdown into array-of-arrays (one element = one cell).
-      const tbl = md.split(/\n/).map(
-        row => row
-          .replace(/^\s*\|\s*/, '')  // strip leading cell separator
-          .replace(/\s*$/, '')       // strip trailing space
-          .split(/\s*\|\s*/)         // split into cells
-      )
-      // Number of cells in longest row.
-      const maxcols = Math.max(...tbl.map(x => x.length))
-      return `${pre}<table markdown class=example>\n` +
-        tbl.map((row, i) => {
-          return '<tr>' + row.map((text, i) => {
-            return processCell(text, i + 1, row.length, maxcols)
-          }).join('') + '</tr>\n'
-        }).join('') + '</table>'
-    },
-  })
-  // https://github.com/showdownjs/showdown/wiki/Showdown-Options
-  const converter = new showdown.Converter({
-    extensions        : ['id', 'table', 'sup'],
-    noHeaderId        : true,
-    simplifiedAutoLink: true,
-    strikethrough     : true,
-    underline         : true,
-    excludeTrailingPunctuationFromURLs: true,
-  })
-  $elem.replaceWith(                   // replace with markdown
-    converter.makeHtml(text)
-  )
+  $elem.replaceWith(baremark(text))
 
   insertIdIntoParentElement()
 
