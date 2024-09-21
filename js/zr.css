@@ -468,4 +468,6 @@ html:not(#js) textarea[disabled] {
   padding: .5em 1em;
 }
 
+small { color:#0004 }
+
 /*[eof]*/
