@@ -182,106 +182,48 @@ function asciify(txt) {
     .toLowerCase()
 }
 
-// Processes a inputted markdown by moving source references to the end of it.
-// Returns an array with two elements, where the first element is the
-// reconfigured markdown, and the second is an object with references to for
-// all the links found.
-function getMarkdownLinks(md) {
-  'use strict'
-  // Find all contiguous occurrences of <regex> in <str>, calling <func> for
-  // each found instance. <func> is called with the accumulator as first arg,
-  // and capture subgroups in <re> as remaining args, and must return a
-  // modified accumulator. Returns updated accumulator, or (if <str> does not
-  // contain contiguous matches of <regex>) the unmodified initial accumulator.
-  function matchReduce(str, regex, func, orgA) {
-    let a = {...orgA}
-    if (!regex.sticky) { regex = new RegExp(regex, 'y') }
-    do {
-      const m = regex.exec(str)
-      a = func(a, m && m.splice(1))
-      if (!m) { return orgA }
-    } while (regex.lastIndex < str.length)
-    return a
-  }
-  function unescapeHtml(text) {
-    return text.replace(/&(quot|amp|lt|gt);/g, (_, a) => (
-      { quot: '"', amp: '&', lt: '<', gt: '>' }[a]
-    ))
-  }
-  let refs = {}
-  let head = {}
-  const newMd = md.trim().split(/\n{2,}/).map((paragraph, i) => {
-    if (i === 0) {
-      const x = matchSplit(paragraph, /(\w+):[ \t]+(.*)(?:\n|$)/y)
-      head = Object.fromEntries(x.map(([x, y]) => [x.toLowerCase(), y]))
-      if (x.length) { return }
-    }
-    // Remove paragraphs containing only link references, and store
-    // these in 'refs' to be appended to the end of the document.
-    let fail = false
-    const re = /\[([^\[\]]+)\]:\s*(\S+)(?:\s+"([^"]*)")?(\n|$)/
-    refs = matchReduce(paragraph, re, (a, match) => {
-      if (!match) {
-        fail = true
-      } else {
-        const [text, link, title] = match
-        const name = unescapeHtml(text)
-        if (a[name]) {
-          console.error(`Source reference '${name}' already exists!`)
-        }
-        a[name] = [link, title]
-      }
-      return a
-    }, refs)
-    return fail ? paragraph : ''
-  }).filter(a => a).concat(
-    // Add back removed link references at end of markdown.
-    Object.keys(refs).sort().map(name => {
-      const [fullLink, title] = refs[name]
-      const [link, pageOffset] = fullLink
-        .match(/^(.*?)([+\-][0-9]+)?$/).slice(1)
-      refs[name].push(parseInt(pageOffset, 10) || 0)
-      refs[name][0] = link
-      return title !== ''
-        ? `[${name}]: ${link} "${title}"`
-        : `[${name}]: ${link}`
-    }).join('\n')
-  ).join('\n\n')
-  return [head, newMd, refs]
-}
-
-function matchSplit(txt, regex) {
-  let i, r, a = []
-  if (!regex.sticky) { regex = RegExp(regex, 'y') }
-  while ((r = regex.exec(txt))) {
-    i = regex.lastIndex
-    a.push((r ?? []).slice(1))
-  }
-  return i === txt.length ? a : []
-}
-
 /******************************************************************************/
 
 function main($) {
   'use strict'
   const $elem = $('textarea[disabled]:first')
-  let [head, text, refs] = getMarkdownLinks($elem[0].value || '')
+  const markdown = $elem[0].value ?? ''
+
+  // Baremark rule for reading header style metadata. Processes first paragraph
+  // as metadata if (and only if) it looks like an email headers (e.g. 'Author:
+  // <name>'). After `baremark()` cal `baremarkHeaders.get()` to get object
+  // with metadata values.
+  const baremarkHeaders = (head => Object.assign(
+    [/^(\n*)((\w+:.*\n)+)\n+/, (_, nl, txt) => {
+      head = {}
+      txt.split(/^/m).forEach(x => {
+        const [_, name, value] = /^(\w+):\s*(.*)\n/.exec(x)
+        head[name.toLowerCase()] = value
+      })
+      return nl
+    }], { get: () => head }
+  ))()
+
+  baremark().unshift(baremarkHeaders)
+  const html = baremark(markdown)
+  const head = baremarkHeaders.get()
+
   const cred = [head.author, head.date].filter(x => x)
   document.title = (head.title||'').replace(/<br>/g, ' ')
     + (cred.length ? ' (' : '')
     + [(head.author ? `by ${head.author}` : ''),
        (head.date ? head.date : '')].filter(x => x).join(', ')
     + (cred.length ? ')' : '')
-  text = `<hgroup notoc>`
+  const preHtml = `<hgroup notoc>`
     + (head.title  ? `<h1>${head.title}</h1>`      : '')
     + (cred.length ? `<h2>${cred.join(', ')}</h2>` : '')
-    + `</hgroup>\n\n` + text
+    + `</hgroup>\n\n`
 
   if (head.favicon) {
     $(document.head).append(`<link rel=icon href="${head.favicon}" sizes=any>`)
   }
 
-  $elem.replaceWith(baremark(text))
+  $elem.replaceWith(preHtml + html)
 
   insertIdIntoParentElement()
 
@@ -290,50 +232,6 @@ function main($) {
     const $h = $(h)
     if (!$h.attr('id')) {              // if parent 'id' is unset
       $h.attr('id', asciify($h.text()))
-    }
-  })
-
-  // Replace remaining [TEXT] and [TEXT][…] with links.
-  const existingId = $('[id]').reduce(
-    (acc, elem) => Object.assign(acc, { [elem.id]: true }), {})
-
-  $('body *:not(script)').contents().each((_, node) => {
-    if (node.nodeType !== 3) {         // only process text nodes
-      return
-    }
-    const $node = $(node)
-    const html = $node.text()          // split into text & links
-      .split(/(\[.*?\](?:\[.*?\])?)/s)
-    if (html.length > 1) {
-      const newHtml = html.map((full, i) => {
-        if (!(i % 2)) { return full }  // plain text elements
-
-        const [, desc, rawLink=desc] = full
-          .replace(/\n+/g, ' ')        // newline = space
-          .match(/\[(.*?)\](?:\[(.*?)\])?/s)
-
-        // Find (and remove) pageref (format :NUM1[–NUM2]).
-        let startPage = 0
-        const linkref = rawLink.replace(
-          /:([0-9]+)(?:–[0-9]+)?\b/,
-          (_, n) => {
-            startPage = parseInt(n, 10)
-            return ''
-          })
-
-        const anchor = asciify(linkref)
-        if (refs[linkref]) {
-          // External link.
-          let [extlink, comment, pageOffset] = refs[linkref]
-          const hash = startPage ? `#page=${startPage + pageOffset}` : ''
-          return `<a href="${extlink}${hash}">${desc}</a>`
-        } else if (existingId[anchor]) {
-          // Links internal to the page.
-          return `<a href="#${anchor}">${desc}</a>`
-        }
-        return full
-      }).join('')
-      $node.replaceWith(newHtml)
     }
   })
 
