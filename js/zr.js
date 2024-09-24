@@ -130,7 +130,7 @@ function afterjQueryLoad() {
     $('html').addClass('DEBUG')
   }
   include(`${scriptPath}baremark.js`, () => {
-    baremark.add(/\[#([^.:\[\]\s]+)\][\t ]*/g, '<a id="$1"></a>')
+    baremark().push([/\[#([^.:\[\]\s]+)\][\t ]*/g, '<a id="$1"></a>'])
     main(jQuery)
   })
 }
