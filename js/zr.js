@@ -134,6 +134,11 @@ function afterjQueryLoad() {
       [/\[#([^.:\[\]\s]+)\][\t ]*/g, '<a id="$1"></a>'],        // [#id]
       [/\b[a-z]+:\/\/[^ \n<>]*[^,;:.?!"'\)\]}<> \n]/gi,x =>     // autolink URL
         `<a href="${baremark.escape(x)}">${baremark.escape(x)}</a>`],
+      [/\n\n\|(\n?(.+\n)*.*?)(?=\n\n)/g, x =>
+        '<table>' + x.trim().split('\n').map(x =>
+          '<tr>' + x.split(/\s*\|\s*/).map((x, i, a) =>
+            (i&&i<a.length-1||x)?`<td>${x}</td>`:'').join('') + '</tr>\n'
+        ).join('') + '</table>\n\n'],
     )
     main(jQuery)
   })
