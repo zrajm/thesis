@@ -1,17 +1,19 @@
 -*- org -*-
 
+Contact the authors of the Si5s book, see if they know where to get it?
+
 * Look into
 ** TODO Description of STSwrite
 ** TODO Principles on what construes a good writing system
    (As opposed to a transcription system)
-** TODO When was Si5s version 2 created?
-   Add ASLwrite Si5s and Si5s version 2 to this tree. (Also add a vertical
-   timeline to the image.)
-
-   ht2024/pdf/miller-2001-page_16.png
 ** TODO Zotero for source references?
 ** TODO Compare Tanada & Arnold with Thomas Basbøll paragraph technique
    http://secondlanguage.blogspot.com/p/40-paragraphs.html
+* Metastuff to look into
+** TODO Thomas Basbøll stuff
+  + "40 paragraphs" blog http://secondlanguage.blogspot.com/p/40-paragraphs.html
+  + Videos https://inframethodology.cbs.dk/?page_id=485
+  + Video: https://youtu.be/JP03twetZfo
 * Thesis content
 ** STSwrite description (pedagogically)
 *** Handshapes
@@ -24,9 +26,27 @@
 *** Sutton SignWriting
 **** Why is it good/bad?
 ** ASLwrite history
+   "pdf/miller-2001-page_16.png" Add ASLwrite and Si5s (version 1 and 2) to
+   this tree. (Also add a vertical timeline to the image.)
 *** Si5s split
 *** Si5s -> ASLwrite
-** Difference between writing & transcription
+*** TODO When was Si5s version 2 created?
+** Distinction between writing & transcription
+   Even though there exists multiple transcription systems for sign language,
+   there are no writing systems in wide use.
+
+   Some good source describing this distinction?
+
+   > The Hamburg system isn’t meant to support fluent reading, it’s meant to
+   > support linguistic research. It’s based on Stokoe notation which was
+   > developed for the same reason.
+   >
+   > There are various systems that ARE meant to be for fluent reading.
+   > SignWriting is the most clunky (you really need to use the keyboard) but
+   > also pretty easy to learn. There are two handwritten systems, ASLWrite and
+   > si5s, they are related to each other. Easy to write but have a bit of a
+   > learning curve. ([woofiegrrl, on subreddit
+   > `r/asl`](https://www.reddit.com/r/asl/comments/yuto95/comment/iwbn3yd/))
 ** Evaluate of effectiveness of writing system?
 *** Adlam experiences?
 ** Why is a writing system needed?
