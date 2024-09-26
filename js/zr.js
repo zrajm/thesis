@@ -130,9 +130,10 @@ function afterjQueryLoad() {
     $('html').addClass('DEBUG')
   }
   include(`${scriptPath}baremark.js`, () => {
-    baremark().push(
+    baremark().unshift(
       [/\[#([^.:\[\]\s]+)\][\t ]*/g, '<a id="$1"></a>'],        // [#id]
-      [/\b[a-z]+:\/\/[^ \n<>]*[a-z]/gi, '<a href="$&">$&</a>'], // autolink URL
+      [/\b[a-z]+:\/\/[^ \n<>]*[^,;:.?!"'\)\]}<> \n]/gi,x =>     // autolink URL
+        `<a href="${baremark.escape(x)}">${baremark.escape(x)}</a>`],
     )
     main(jQuery)
   })
