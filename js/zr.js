@@ -131,8 +131,16 @@ function afterjQueryLoad() {
   }
   include(`${scriptPath}baremark.js`, () => {
     baremark().unshift(
+      [/<!--.*?-->/gs, ''],                               // strip <!--..-->
+      [/\^([^^\n]+)\^/g, '<sup>$1</sup>'],                        // ^...^
+      // [#...] -> <a id="..."></a>. IDs must not contain space, nor any of
+      // '.:[]' (colon and period interferes with CSS styling). Note: Spaces
+      // and tabs following the tag are also stripped, but not newline (as this
+      // can cause a mess inside tables). If you put a [#...] in a paragraph of
+      // its own you'll get an empty paragraph with a single <a> tag in it!)
       [/\[#([^.:\[\]\s]+)\][\t ]*/g, '<a id="$1"></a>'],        // [#id]
-      [/\b[a-z]+:\/\/[^ \n<>]*[^,;:.?!"'\)\]}<> \n]/gi,x =>     // autolink URL
+      //[/(?<!\]\()\b[a-z]+:\/\/[^ \n<>]*[^,;:.?!"'\)\]}<> \n]/gi,x =>     // autolink URL
+      [/(?<!\]\(|\]: +)\b[a-z]+:\/\/[^ \n<>]*[^,;:.?!"'\)\]}<> \n]/gi,x =>     // autolink URL
         `<a href="${baremark.escape(x)}">${baremark.escape(x)}</a>`],
       [/\n\n\|(\n?(.+\n)*.*?)(?=\n\n)/g, x =>
         '<table>' + x.trim().split('\n').map(x =>

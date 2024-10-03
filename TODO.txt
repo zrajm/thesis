@@ -15,6 +15,57 @@ Contact the authors of the Si5s book, see if they know where to get it?
   + Videos https://inframethodology.cbs.dk/?page_id=485
   + Video: https://youtu.be/JP03twetZfo
 * Thesis content
+** Illustrate all systems in the overview table
+   Use one (or a few) different signs: 'world'/'ball' maybe? If multiple,
+   choose one with side perspective in ASLwrite, or something on the face? (Maybe all three?)
+
+   Cool to see: Symmetric, but also left-right distinction, and with a body
+   place as articulatory placement.
+** Pointed syllabics
+   Started out as fat lines, then broken lines (in the printing press) then
+   eventually pointed. (Parallel to SignWriting – filled in oval for palm =
+   transcription, not writing, because impractical.)
+** Turn DOI references into links
+** Separate reference section into two?
+   One for articles describing writing systems (Primary sources for different
+   Writing systems?), one for other references.
+** Find Source 'SignFont Handbook'
+   SignFont
+** Si5s at Gallaudet?
+   “Incoming students at Gallaudet University will be required to learn si5s
+   starting in 2012.” (ASLFont 2024)
+** ASLwrite related websites
+   https://aslfont.github.io/ (repo: https://github.com/aslfont/aslfont.github.com)
+   https://www.handspeak.com/ (run by Jolanta Lapiak)
+     + https://www.handspeak.com/learn/402/ -- Why writing in sign language?
+     + https://www.handspeak.com/learn/403/ -- History of sign language writing
+       (looks like an aslfont page) shows development of handshape characters
+       over time in different writing systems.
+   https://www.lapiak.com/ (run by Jolanta Lapiak)
+   http://www.aslwrite.com/ (Adrean Clark, defuct)
+      http://www.aslwrite.com/about_aslwrite/
+      http://www.aslwrite.com/writeaslnow/
+
+   Find and 'revive' the old ASLwrite site?
+** 'Eshkol-Wachman movement notation system'
+   Used in a dictionary for Israeli Sign Language.
+   https://scriptsource.org/cms/scripts/page.php?item_id=script_detail&key=Qaah
+   https://scriptsource.org/cms/scripts/page.php?item_id=source_detail&uid=err4d7kdsw
+** Is it possible to write sign language?
+   “If the Sign Language is a code, it should be encodable in notation, and
+   decodable from notation” (Voegelin 1958: 74)
+
+   Voegelin, C. F. (1958). “Sign language analysis, on one level or two?”
+   *International Journal of American Linguistics* 24(1), 71–77.
+** Consider Martin 2003 -- Compares Stokoe notation & SignWriting
+   This might be interesting for ideas on how to compare multiple writing
+   systems and/or evaluate them relative to each other.
+
+   martin-2003-linguistic_comparison_two_notation_systems_for_signed_languages.pdf
+** Three modalities of language: Spoken, signed, written (p. 17)
+   Meletis, Dimitrios & Dürscheid, Christa. (2022). *Writing Systems and Their
+   Use: An Overview of Grapholinguistics.* Berlin, Boston: De Gruyter Mouton.
+   https://doi.org/10.1515/9783110757835
 ** STSwrite description (pedagogically)
 *** Handshapes
 *** Perspective
