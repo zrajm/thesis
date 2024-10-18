@@ -1,0 +1,3 @@
+[submodule "js/elemental"]
+	path = js/elemental
+	url = https://github.com/zrajm/elemental
