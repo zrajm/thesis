@@ -28,7 +28,7 @@ function walkTheDOM(e, func) {
 // limitation is mostly to not break 'him/her/it/them' combinations, which, if
 // it occurs in the first cell of a table in TKD, looks really ugly since line
 // breaks are forced there).
-function insertOptionalBreakAfterSlash($e) {
+function insertOptionalBreakAfterSlash($, $e) {
   'use strict'
   $e.each((_, e) => {
     walkTheDOM(e, e => {
@@ -49,7 +49,7 @@ function insertOptionalBreakAfterSlash($e) {
 // parent (i.e. not even text can precede it) and c) the <a> tag has no content
 // of its own (e.g. <a..>CONTENT</a>). If these criteria are not met, then the
 // <a> tag will be left unmodified.
-function insertIdIntoParentElement() {
+function insertIdIntoParentElement($) {
   'use strict'
   $('a[id]:empty:first-child')                     // find <a> tags
     .filter((_, e) => e.previousSibling === null)  //   not preceded by text
@@ -72,7 +72,7 @@ function insertIdIntoParentElement() {
 //
 // <h#> tags that have the class 'title' will not be included in the
 // table-of-contents.
-function insertTableOfContent() {
+function insertTableOfContent($) {
   'use strict'
   const $toc = $('toc')
   if ($toc.length === 0) { return }            // abort if <toc> not found
@@ -116,9 +116,9 @@ function insertTableOfContent() {
 
 /******************************************************************************/
 
-const scriptPath = getRelativeScriptPath()
-
-include(`${scriptPath}/jquery-3.7.1.slim.min.js`, afterjQueryLoad)
+import('./jquery-3.7.1.slim.js').then(() => {
+  afterjQueryLoad()
+})
 
 function afterjQueryLoad() {
   'use strict'
@@ -131,7 +131,7 @@ function afterjQueryLoad() {
   if (location.search.match(/\bDEBUG\b/i)) {   // set 'class=DEBUG'
     $('html').addClass('DEBUG')
   }
-  include(`${scriptPath}baremark.js`, () => {
+  import(`./baremark.js`).then(() => {
     baremark().unshift(
       [/<!--.*?-->/gs, ''],                               // strip <!--..-->
       [/\^([^^\n]+)\^/g, '<sup>$1</sup>'],                        // ^...^
@@ -155,39 +155,6 @@ function afterjQueryLoad() {
 }
 
 /******************************************************************************/
-
-// Load Javascript and invoke callback function onload.
-function include(url, callback) {
-  'use strict'
-  document.head.appendChild(
-    Object.assign(document.createElement('script'), {
-      src: url,
-      async: true,
-      onload: callback,
-    })
-  )
-}
-
-// Get Javascript path. (Path name relative to the page the script was included
-// on.)
-function getRelativeScriptPath() {
-  'use strict'
-  // Lists with each path component for element (removing trailing filename).
-  let [script, page] = [
-    document.currentScript.src.split('/').slice(0, -1),  // page url
-    document.location.href    .split('/').slice(0, -1),  // script url
-  ]
-  // Remove leading common parts.
-  while (script.length > 0 && page.length > 0 && script[0] === page[0]) {
-    script.shift()
-    page.shift()
-  }
-  return [].concat(
-    // Replace remaining page path elements with '..'.
-    page.length > 0 ? page.map(() => '..') : ['.'],
-    script,
-  ).join('/') + '/'
-}
 
 function asciify(txt) {
   'use strict'
@@ -241,7 +208,7 @@ function main($) {
 
   $elem.replaceWith(preHtml + html)
 
-  insertIdIntoParentElement()
+  insertIdIntoParentElement($)
 
   // Add ID attribute to <h#> tags.
   $('h1,h2,h3,h4,h5,h6,h7').each((_, h) => {
@@ -254,8 +221,8 @@ function main($) {
   // Add 'target="_blank"' to all external links.
   $('a[href]:not([href^="#"],[href^="javascript:"])').attr('target', '_blank')
 
-  insertOptionalBreakAfterSlash($('html'))
-  insertTableOfContent()
+  insertOptionalBreakAfterSlash($, $('html'))
+  insertTableOfContent($)
 
   // Add left margin link icon for each hashlink in document.
   ;(body => {
@@ -358,4 +325,9 @@ function main($) {
     })
   }, 0)
 }
+
+import('./elemental.mjs').then(elemental => {
+  window.$ = elemental.$                       // for use in browser console
+})
+
 /*[eof]*/
