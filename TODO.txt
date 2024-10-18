@@ -15,6 +15,7 @@ Contact the authors of the Si5s book, see if they know where to get it?
   + Videos https://inframethodology.cbs.dk/?page_id=485
   + Video: https://youtu.be/JP03twetZfo
 * Thesis content
+** Use "Writing signed languages" "Coffee" example?
 ** Illustrate all systems in the overview table
    Use one (or a few) different signs: 'world'/'ball' maybe? If multiple,
    choose one with side perspective in ASLwrite, or something on the face? (Maybe all three?)
@@ -110,6 +111,10 @@ Contact the authors of the Si5s book, see if they know where to get it?
 **** Wallin's dedication quote from Polysyntetiska tecken
 ** Standardized 'spelling'
 * Webpage Design
+** TODO Use Elemental instead of jQuery
+** TODO Set viewport (via Javascript?) for mobile phones
+   <meta name="viewport" content="width=device-width,initial-scale=1">
+   <meta name="description" content="Zrajm projekt: Mestadels saker om teckenspråk.">
 ** TODO Prettify straight quotes
    Opening quotes are (always?) followed by letter or digit.
 
