@@ -125,6 +125,8 @@ function afterjQueryLoad() {
   // jQuery .reduce() plugin (from https://bugs.jquery.com/ticket/1886)
   jQuery.fn.reduce = [].reduce
 
+  $('head').append('<meta name="viewport" content="width=device-width,initial-scale=1">')
+
   $('html').attr('lang', 'en')                 // set document language
   if (location.search.match(/\bDEBUG\b/i)) {   // set 'class=DEBUG'
     $('html').addClass('DEBUG')
