@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<title>Bergeron — 2006 — Typologie de systèmes écrits pour les langues signées</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="fr">
+<meta name="date" content="2024-12-30T09:55:48+00:00">
+<style>
+/******************************************************************************/
+/* Font: Minion 3 [https://minion.typekit.com/]
+   Text    (for sizes 9pt--14pt)
+   Caption (for sizes 6pt--9pt)
+   Subhead (for sizes 14--24pt)
+   Display (for sizes 24pt and up)
+*/
+/* Text Regular (weight 400) */
+@font-face {
+  font-family: 'Minion 3';
+  src: url('../js/fonts/minion3-regular.woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Minion 3';
+  src: url('../js/fonts/minion3-italic.woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+/* Text Medium (weight 500) */
+@font-face {
+  font-family: 'Minion 3';
+  src: url('../js/fonts/minion3-medium.woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Minion 3';
+  src: url('../js/fonts/minion3-medium-italic.woff2');
+  font-weight: 500;
+  font-style: italic;
+}
+/* Text Semibold (weight 600) */
+@font-face {
+  font-family: 'Minion 3';
+  src: url('../js/fonts/minion3-semibold.woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Minion 3';
+  src: url('../js/fonts/minion3-semibold-italic.woff2');
+  font-weight: 600;
+  font-style: italic;
+}
+/* Text Bold (weight 700) */
+@font-face {
+  font-family: 'Minion 3';
+  src: url('../js/fonts/minion3-bold.woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Minion 3';
+  src: url('../js/fonts/minion3-bold-italic.woff2');
+  font-weight: bold;
+  font-style: italic;
+}
+/******************************************************************************/
+/* Caption Regular (weight 400) */
+@font-face {
+  font-family: 'Minion 3 Caption';
+  src: url('../js/fonts/minion3-caption-regular.woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Minion 3 Caption';
+  src: url('../js/fonts/minion3-caption-italic.woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+/* Caption Medium (weight 500) */
+@font-face {
+  font-family: 'Minion 3 Caption';
+  src: url('../js/fonts/minion3-caption-medium.woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Minion 3 Caption';
+  src: url('../js/fonts/minion3-caption-medium-italic.woff2');
+  font-weight: 500;
+  font-style: italic;
+}
+/* Caption Semibold (weight 600) */
+@font-face {
+  font-family: 'Minion 3 Caption';
+  src: url('../js/fonts/minion3-caption-semibold.woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Minion 3 Caption';
+  src: url('../js/fonts/minion3-caption-semibold-italic.woff2');
+  font-weight: 600;
+  font-style: italic;
+}
+/* Caption Bold (weight 700) */
+@font-face {
+  font-family: 'Minion 3 Caption';
+  src: url('../js/fonts/minion3-caption-bold-italic.woff2');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Minion 3 Caption';
+  src: url('../js/fonts/minion3-caption-bold.woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+/******************************************************************************/
+/* Subhead Regular (weight 400) */
+@font-face {
+  font-family: 'Minion 3 Subhead';
+  src: url('../js/fonts/minion3-subhead-regular.woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Minion 3 Subhead';
+  src: url('../js/fonts/minion3-subhead-italic.woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+/* Subhead Medium (weight 500) */
+@font-face {
+  font-family: 'Minion 3 Subhead';
+  src: url('../js/fonts/minion3-subhead-medium.woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Minion 3 Subhead';
+  src: url('../js/fonts/minion3-subhead-medium-italic.woff2');
+  font-weight: 500;
+  font-style: italic;
+}
+/* Subhead Bold (weight 700) */
+@font-face {
+  font-family: 'Minion 3 Subhead';
+  src: url('../js/fonts/minion3-subhead-bold.woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Minion 3 Subhead';
+  src: url('../js/fonts/minion3-subhead-bold-italic.woff2');
+  font-weight: bold;
+  font-style: italic;
+}
+/******************************************************************************/
+/* Display Regular (weight 400) */
+@font-face {
+  font-family: 'Minion 3 Display';
+  src: url('../js/fonts/minion3-display-regular.woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Minion 3 Display';
+  src: url('../js/fonts/minion3-display-italic.woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+/* Display Medium (weight 500) */
+@font-face {
+  font-family: 'Minion 3 Display';
+  src: url('../js/fonts/minion3-display-medium.woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Minion 3 Display';
+  src: url('../js/fonts/minion3-display-medium-italic.woff2');
+  font-weight: 500;
+  font-style: italic;
+}
+/* Display Semibold (weight 600) */
+@font-face {
+  font-family: 'Minion 3 Display';
+  src: url('../js/fonts/minion3-display-semibold.woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Minion 3 Display';
+  src: url('../js/fonts/minion3-display-semibold-italic.woff2');
+  font-weight: 600;
+  font-style: italic;
+}
+/* Display Bold (weight 700) */
+@font-face {
+  font-family: 'Minion 3 Display';
+  src: url('../js/fonts/minion3-display-bold.woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Minion 3 Display';
+  src: url('../js/fonts/minion3-display-bold-italic.woff2');
+  font-weight: bold;
+  font-style: italic;
+}
+/******************************************************************************/
+  html {
+      font-family: 'Minion 3', Minion3, 'Times New Roman', TimesNewRoman, Times;
+      font-size: 20px;
+      padding: 1rem 2rem;
+      max-width: 42em;
+      margin: auto;
+      line-height: 1.5;
+  }
+  h1, h2, h3 {
+      font-size: 1rem;
+      font-weight: normal;
+      margin: 2rem 0 1rem 0;
+  }
+  h1, figcaption { font-weight: bold }
+  h2, h3 { font-style: italic }
+  figure {
+      width: fit-content;
+      margin: 1rem auto;
+      text-align: center;
+  }
+  figcaption {
+      margin: 1rem;
+  }
+  p {
+      text-indent: 2em;
+      & > * { text-indent: 0 }
+  }
+  img { height: 200px }
+  [hanging] p {
+      padding-left: 2rem;
+      text-indent: -2rem;
+  }
+  a[id] {
+      float: right;
+      margin: .25rem;
+      margin-left: 1rem;
+      margin-right: 0;
+      font-size: 0;
+      box-shadow: 0 2px 5px #0008;
+      background: #fff;
+      z-index: 1;
+      position: relative;
+  }
+  a[id]:hover {
+      transform: scale(4);
+  }
+  aside[id^=fn] {
+      border: 1px solid #000;
+      border-width: 1px 0;
+      padding: .5rem 0;
+      margin: 2rem 0;
+  }
+  .h25 { height: 25px }
+  .h30 { height: 30px }
+  .h83 { height: 83px }
+  .h145 { height: 145px }
+  .box {
+      border: 2px solid #000;
+      width: fit-content;
+      margin: 1rem auto;
+  }
+  .flexwrap {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      justify-content: center;
+      margin: 1rem;
+  }
+  .illustrated-example {
+      & img { transform: rotate(-.75deg) }
+      & > div > div > div:last-child { margin-top: 1rem }
+  }
+  .symbol-table {
+      border-spacing: 1rem 0;
+      margin: 1rem 1rem;
+      & td {
+          padding: 0 .25rem;
+          vertical-align: top;
+          &:first-child { text-align: center; }
+          &:last-child { text-indent: 2rem; }
+      }
+  }
+  sup { line-height: 0 }
+</style>
+
+<div class="box" style="padding:.25rem .5rem" translate=no>
+  This is an HTML version
+  of <a href="../bergeron-2006-typologie_systemes_ecrits_pour_les_langues_signees.pdf">this
+  article</a>, it’s mostly useful since you can feed it through your browser’s
+  translation function (which, at least, I cannot do with the original PDF).
+  Images of the original pages can be seen to the right.
+</div>
+
+<hgroup>
+  <a id=1><img src="01.png"></a>
+  <h1>TYPOLOGIE DE SYSTÈMES ÉCRITS POUR LES LANGUES SIGNÉES</h1>
+  <h1>Louis-Félix Bergeron</h1>
+  <h1>Université du Québec À Montréal</h1>
+</hgroup>
+
+<aside style="border:1px solid #000;width:fit-content;padding:.25rem .5rem">
+  RELQ/QSIL
+  <br>Vol, No. 2, Printemps/Spring 2006
+</aside>
+
+<h1>Résumé</h1>
+
+<p>Au cours des 40 dernières années, la multiplication des besoins de transcription
+des langues signées a amené la création de plusieurs systèmes écrits conçus pour
+différents objectifs comme la description des unités phonologiques ou la
+représentation des relations syntaxiques entre les signes. Par ailleurs, alors que les
+langues des signes ne sont pratiquement pas écrites par leurs utilisateurs, il existe
+pourtant quelques systèmes pouvant servir à l’écriture courante. Pour y voir plus clair
+dans toutes ces possibilités peu connues, nous présentons d’abord quelques
+caractéristiques des langues des signes à prendre en considération pour leur
+représentation écrite, telles que l’iconicité, l’utilisation de l’espace et la simultanéité.
+Nous proposons ensuite une typologie de systèmes écrits pour les langues des signes,
+classant ces systèmes selon leur niveau de représentation, les caractéristiques de leurs
+graphèmes et leur arrangement.
+
+<h1 lang=en translate=no>Abstract</h1>
+
+<p lang=en translate=no>During the last 40 years, the growing needs for sign language transcription led to
+the creation of several writing systems designed for different goals such as the
+description of phonological units or the representation of syntactical relations
+between signs. In addition, whereas sign languages are practically not written by their
+users, there are however some systems that could be used for everyday writing. In
+order to have a clearer view of all these little known possibilities, we initially expose
+some characteristics of sign languages to be taken into account for their written
+representation, such as iconicity, use of space and simultaneity. Then, we propose a
+typology of writing systems for sign languages, classifying these systems according
+to their level of representation, the characteristics of their graphemes and their layout.
+
+<h1>
+  <a id=2><img src="02.png"></a>
+  Introduction</h1>
+
+<p>Depuis plus de 5000 ans, l’être humain écrit et différents systèmes d’écriture ont
+été créés pour représenter des langues orales. La « découverte » de l’existence de
+langues des signes (LS) pose maintenant de nouveaux défis à l’écriture. Une première
+tentative d’écriture de la langue des signes française (LSF) voit le jour en 1825 avec
+la Mimographie d’Auguste Bébian. Mais ce n’est qu’à partir des années 1960, avec
+les travaux de William Stokoe et de ses collaborateurs, que se multiplient les
+systèmes écrits pour les LS, principalement créés en fonction des différents besoins
+de la recherche. Paradoxalement, les LS du monde sont très peu écrites par leurs
+utilisateurs et, même si des systèmes d’écriture ont été créés de façon à offrir une
+véritable modalité écrite d’usage courant pour ces langues, ces systèmes restent
+encore peu connus par les sourds. Pourtant, ce ne sont pas les raisons qui manquent
+pour se mettre à écrire et à lire en LS, comme l’éducation bilingue des sourds, la
+reconnaissance des LS et de la culture sourde, etc. Il est possible que parmi les
+obstacles qui retardent l’adoption et l’utilisation d’une modalité écrite pour les LS, il
+y ait la difficulté de s’imaginer comment des LS pourraient être écrites, étant donné
+qu’on associe depuis longtemps l’écriture aux langues orales.
+
+<p>Dans le cadre de nos recherches sur l’écriture de la langue des signes québécoise
+(LSQ), nous nous sommes intéressés aux différentes possibilités de systèmes écrits
+pour les LS. Voyant à quel point les propositions de systèmes de transcription et
+d’écriture sont construites selon des contraintes et des buts différents, nous avons
+cherché à dresser un portrait d’ensemble de ces systèmes. Cet article présentera
+d’abord quelques caractéristiques des LS à tenir compte dans leur représentation
+écrite. Puis, nous proposerons une typologie de systèmes d’écriture et de transcription
+actuellement disponibles pour les LS. Cette typologie nous permettra de faire un tour
+d’horizon des moyens proposés jusqu’à présent pour représenter les LS à l’écrit selon
+différents objectifs et différents critères.
+
+<h1>1. Quelques caractéristiques des langues signées</h1>
+
+<p>L’étude des LS est encore très jeune et la description de ces langues n’est que
+partielle. Cependant, jusqu’à présent, on a identifié les niveaux de représentation
+linguistique des LS et décrit les principaux composants, notamment leur système de
+représentation phonologique. Par exemple, dans le premier tome de ia Grammaire
+descriptive de la LSQ (Dubuisson <i>et al.</i>, 1999), on décrit cette langue en fonction des
+sept paramètres de formation des signes suivants :
+
+<ul>
+  <li>La configuration manuelle : la forme de la main;
+  <li>Le lieu d’articulation : l’emplacement de la main dans l’espace ou sur le
+    corps du signeur. Il peut s’agir d’un point de départ ou d’arrivée d’un
+    mouvement, lorsque le signe comporte deux lieux d’articulation;
+  <li>Le mouvement : le déplacement de la main ou le changement d’état des
+    articulateurs lors de la production d’un signe;
+  <li>L’orientation : les directions vers lesquelles sont dirigés les mains et les
+    doigts;
+  <li>
+    <a id=3><img src="03.png"></a>
+    Le contact : le lieu de rencontre entre la main qui exécute le signe et une
+    autre partie du corps (incluant l’autre main);
+  <li>L’arrangement : la disposition des deux mains l’une par rapport à l’autre;
+  <li>Le comportement non manuel : l’état des autres parties du corps impliquées
+    dans la production d’un signe (tronc, tête, visage, veux, etc.).
+</ul>
+
+<p>La figure 1 nous montre le signe ANNÉE-PASSÉE formé d’au moins un élément
+de chaque paramètre. Dans ce signe, alors que la main non dominante n’a qu’une
+configuration (poing fermé), la main dominante en a deux : d’abord le poing fermé
+puis l’index tendu. Cette main fait un mouvement arrière de l’espace neutre (lieu
+d’articulation de départ) vers l’épaule (lieu d’articulation d’arrivée). Pendant ce
+mouvement, l’orientation de la main dominante passe de la paume orientée vers à la
+gauche à la paume orientée vers l’arrière. L’index de cette main est également orienté
+vers l’arrière. Juste avant le mouvement, les deux mains font contact l’une sur l’autre.
+Au moment de ce contact, l’arrangement des deux mains est de telle sorte que la main
+dominante est placée au-dessus de la main non dominante. Enfin, pendant le
+mouvement de la main vers l’arrière, la tête se tourne vers l’épaule (comportement
+non manuel).
+
+<figure>
+  <figcaption>Figure 1 : Anné-Passée</figcaption>
+  <div class="box" style=padding:1rem>
+    <img style="height:calc(598px / 2)" src="03a.png">
+  </div>
+</figure>
+
+<p>Cet exemple nous montre qu’un même signe peut être composé d’une ou de
+plusieurs configurations, d’un ou de plusieurs lieux d’articulation, d’un ou de
+plusieurs mouvements, etc.
+
+<p>Chaque paramètre constitue en fait ce qu’on pourrait appeler un inventaire de
+phonèmes (qui sont aussi parfois appelés chérèmes dans l’étude des LS), c’est-à-dire
+les unités minimales non porteuses de sens de la langue. Par exemple, on a recensé
+116 configurations manuelles utilisées en LSQ (Dubuisson ef al., 1999). Toutefois, il
+n’est pas simple de constituer une liste fermée de ces phonèmes pour chacun des sept
+paramètres. Ainsi, même si on parvient à identifier des mouvements et des lieux
+d’articulation spécifiques (surtout lorsqu’ils sont en lien avec des parties du corps),
+leur dénombrement est moins évident quand il s’agit de mouvements ou de lieux
+d’articulation associés à un endroit quelconque dans l’espace neutre. Liddell (2000)
+discute de ce problème pour la description des lieux d’articulation de l’espace devant
+le signeur et de son impact, entre autres, sur la notion d’accord verbal. L’espace dont
+<a id=4><img src="04.png"></a>
+dispose le signeur pour la production des LS est très vaste comparativement à
+FPespace disponible dans la cavité orale des locuteurs de langues orales. Cette
+première spécificité articulatoire, attribuable à la modalité, multiplie les traits
+phonologiques possibles, ce qui rend difficile l’inventaire des phonèmes de chacune
+des LS. Cette difficulté a mené quelques chercheurs, dont Cuxac (1997, 2000), à
+remettre en question la pertinence de l’analyse des LS selon des paramètres
+strictement phonologiques. Cuxac propose plutôt de considérer cette analyse du point
+de vue morphologique par le biais de l’iconicité (c’est-à-dire le lien entre la forme des
+signes et la forme de ce qu’ils représentent) dans la structure des signes et dans leur
+réalisation en énonciation.
+
+<p>Dans le signe, tous les paramètres, qu’on appelle aussi constituants structurels,
+n’ont pas la même importance et ne sont pas traités de la même façon. Les chercheurs
+s’entendent généralement pour considérer quatre paramètres majeurs, soit la
+configuration manuelle, le mouvement, le lieu d’articulation et l’orientation (Stokoe,
+1976). Les unités minimales comprises dans chacun de ces quatre paramètres ont été
+les premières à être décrites et identifiées comme des phonèmes de la langue. Ce sont
+aussi les quatre paramètres qui interviennent dans la reconnaissance mentale des
+signes (Emmorey, 2002). On peut également rendre compte du contact et de
+l’arrangement dans la description de ces constituants. Par ailleurs, alors que tous les
+signes manuels requièrent nécessairement au moins une configuration, un
+mouvement, un lieu d’articulation et une orientation, le contact, l’arrangement et le
+comportement non manuel ne sont pas toujours présents en forme de citation. Par
+exemple, le comportement non manuel joue rarement un rôle lexical dans des signes
+comme ANNÉE-PASSÉE, que nous avons vu dans la figure 1. Cependant, le
+contexte d’un ou plusieurs signes peut impliquer la superposition d’un comportement
+non manuel à ces signes. Les sourcils relevés, par exemple, peuvent indiquer la
+surprise ou marquer la forme interrogative d’une phrase.
+
+<p>Mis à part le mouvement, l’ensemble des paramètres implique la simultanéité de la
+production des phonèmes dans les LS. Contrairement aux langues orales, qui sont
+produites par concaténation de phonèmes vocaliques et consonantiques, les signes
+d’une LS sont produits avec des séries de phonèmes simultanés, réalisés par plusieurs
+articulateurs à la fois, dont les mains, les bras, les épaules, le tronc, le visage. Cette
+simultanéité de phonèmes est très productive et suscite des phénomènes linguistiques
+absents en langues orales. Par exemple, sur le plan syntaxique, les LS permettent
+l’encodage parallèle, c’est-à-dire la production simultanée de deux signes, à raison
+d’un par main (Miller et Dubuisson, 1992). Sur le plan morphologique, on peut
+également produire simultanément plusieurs morphèmes dans la composition, la
+flexion ou la dérivation. Par exemple, on compose le signe GARAGE<a href="#fn1"><sup>1</sup></a> (figure 2) à
+partir de deux classificateurs sémantiques, soit le CL-/V’/ dont le sens est un véhicule
+et le CL-/B’/ dont le sens est une surface plate. On peut aussi fléchir un verbe en en
+modifiant les lieux d’articulation en fonction de la personne grammaticale tout en
+conservant la même configuration manuelle, comme avec le verbe DONNER (figures
+3 et 4).
+
+<aside id="fn1">
+  <sup>1</sup> Les exemples de cette section sont tirés de Dubuisson er al. (1996 et 1999).
+</aside>
+
+<a id=5><img src="05.png"></a>
+
+<figure>
+  <figcaption>Figure 2 : Garage</figcaption>
+  <div class="box">
+    <img style="height:calc(426px / 2);margin:.5rem" src="05a.png">
+  </div>
+</figure>
+
+<figure>
+  <figcaption>Figure 3 : 1-donner-2</figcaption>
+  <div class="box">
+    <img style="height:calc(420px / 2);margin:.5rem" src="05b.png">
+  </div>
+</figure>
+
+<figure>
+  <figcaption>Figure 4 : 2-donner-1</figcaption>
+  <div class="box">
+    <img style="height:calc(402px / 2);margin:.5rem" src="05c.png">
+  </div>
+</figure>
+
+<p>Les caractéristiques des LS soulèvent des questions différentes de celles
+auxquelles est confrontée la représentation écrite des langues orales. Par exemple,
+d’un point de vue physiologique, la parole est produite par un complexe articulatoire
+dont les articulateurs ne sont pas autonomes les uns par rapport aux autres dans la
+production des sons. L’indépendance des articulateurs impliqués dans la production
+des LS permet une plus grande simultanéité dans la production des différents niveaux
+de représentation de la langue : phonologique, morphologique, lexical, syntaxique et
+discursif. De plus, l’utilisation de l’espace pour établir les relations référentielles est
+aussi une stratégie propre aux LS. La localisation des éléments dans l’espace ou
+l’utilisation de marqueurs non manuels tels que la direction du regard, de la tête, des
+épaules et du tronc sont différents moyens d’encoder les relations entre les éléments
+syntaxiques en utilisant la matrice spatiale.
+
+<h1>
+  <a id=6><img src="06.png"></a>
+  2. Proposition de typologie de systèmes écrits pour les langues signées</h1>
+
+<p>Il existe différents types de systèmes écrits pour les langues de signes. Ces
+systèmes se divisent principalement en deux catégories : les systèmes de notation et
+de transcription, d’une part, et les systèmes d’écriture pour un usage courant, d’autre
+part. Un système de transcription vise à rendre à l’écrit un ou plusieurs aspects
+linguistiques de la structure d’une LS. Dans les systèmes de transcription, on ne vise
+pas la convivialité, mais plutôt la précision. En ce sens, ils sont comparables à
+l’Alphabet phonétique international (APT) utilisé pour rendre compte de la phonétique
+et de la phonologie des langues orales. Ces systèmes sont généralement très
+descriptifs et n’ont pas pour objectif l’économie de lecture ou d’écriture. La nécessité
+d’employer de tels systèmes est apparue dès le début des recherches en LS. Le
+pionnier de ces recherches, William Stokoe (1960), a créé son propre système qui a
+connu par la suite plusieurs versions au fil des nouvelles LS étudiées et à mesure que
+les besoins de représentation écrite se sont précisés (Miller, 1994). À la suite de
+Stokoe, d’autres chercheurs ont proposé leurs propres systèmes, ce qui a enrichi
+lPinventaire des systèmes disponibles pour la transcription des LS (Miller, 1994) :
+
+<ul>
+  <li>le système LaMont West;
+  <li>le système Papaspyrou;
+  <li>HamNosSys;
+  <li>le système Jouison;
+  <li>le système de notation de danse Laban-Benesh;
+  <li>le système Liddell-Johnson;
+  <li>SignFont;
+  <li>etc.
+</ul>
+
+<p>Cependant, la pluralité de ces systèmes et les fonctions particulières pour
+lesquelles ils ont été créés peuvent compliquer la diffusion et l’accessibilité des
+recherches de chacun, comme le note Miller (1994).
+
+<p>En ce qui a trait aux systèmes d’écriture, ils se distinguent des systèmes
+précédents par leur objectif d’utilisation usuelle par l’ensemble des locuteurs d’une
+langue plutôt que par des spécialistes seulement. Par cet objectif, ces systèmes se
+comparent à l’orthographe d’une langue orale. Ces systèmes visent explicitement à
+constituer une modalité écrite pour une LS et sont créés dans cette optique. Certaines
+propositions, comme celle de Gérald Tilkin (Tilkin, manuscrit), cherchent à employer
+les mêmes graphèmes que les systèmes pour les langues orales. Par exemple, avec le
+système de Tilkin, le signe ÉCRIRE de la LSF (tel qu’illustré dans Moody, 1986)
+s’écrit de cette façon : s28dd+!F-l7. La graphie de ce signe rend compte des éléments
+suivants :
+
+<figure>
+  <a id=7><img src="07.png"></a>
+  <figcaption>Figure 5 : Écrire (en LSF) tiré de Moody (1986)</figcaption>
+  <table style="border-spacing:1rem">
+    <tr style="vertical-align:top;text-align:left">
+      <td rowspan=5 style="vertical-align:middle">
+        <div class="box">
+          <img style="height:calc(518px / 2); margin:.125rem 1rem" src="07a.png">
+        </div>
+      <td>s28 :
+      <td style="width:20rem">Configuration /S/ (s) ; variante
+        digitale de l’index (2) ; paume de
+        la main orientée vers le bas (8)
+    <tr style="vertical-align:top;text-align:left">
+      <td>dd+ :
+      <td>Mouvement tout droit répété deux
+        fois (deux fois d) ; vers l’avant (+)
+    <tr style="vertical-align:top;text-align:left">
+      <td>!F :
+      <td>Contact de la main dominante (!) ;
+        avec l’autre main (F)
+    <tr style="vertical-align:top;text-align:left">
+      <td>- :
+      <td>Changement de main
+    <tr style="vertical-align:top;text-align:left">
+      <td>l7 :
+      <td>Main non dominante tendue,
+        doigts non écartés (i); paume
+        orientée vers le haut (7).
+  </table>
+</figure>
+
+<p>Ce système est composé d’une soixantaine de lettres, de chiffres et de symboles
+typographiques divisés en sept groupes :
+
+<ul>
+  <li>les lettres-formes (18 lettres représentant chacune une configuration de la
+    main);
+  <li>les lettres-mouvements (9 lettres représentant chacune un type de
+    mouvement de la main);
+  <li>les lettres-corps (6 lettres représentant chacune un lieu d’articulation);
+    les lettres-visages (12 lettres représentant chacune une expression faciale);
+    les lettres-directions (6 caractères, dont 4 chiffres et deux symboles
+    typographiques, représentant chacun une direction);
+  <li>les lettres-parties (5 chiffres qui, associés aux lettres-corps, précisent une
+    partie du corps);
+  <li>les « autres lettres » (4 symboles typographiques qui représentent le
+    changement de main, le parallélisme ou la symétrie des comportements
+    manuels, ou le contact).
+</ul>
+
+<p>Dans le système de Tilkin, toutes les associations entre les graphèmes et ce qu’il
+nomme des « part-de-gestes » (c’est-à-dire un chérème) sont totalement arbitraires et
+n’ont rien à voir avec la forme des graphèmes ou la forme des chérèmes.
+
+<p>D’autres propositions, comme le Sutton’s SignWriting, emploient des graphèmes
+iconiques plus particuliers aux caractéristiques des LS. Ces graphèmes sont bien
+différents de ceux utilisés pour les langues orales. La figure 6 illustre la graphie du
+signe ÉCRIRE (en LSF) dans ce système.
+
+<figure>
+  <a id=8><img src="08.png"></a>
+  <figcaption>
+    Figure 6 : Écrire (en LSF) écrit en Sutton’s SignWriting
+    tiré de Moody (1986), graphèmes tirés de SignBank Online Database
+  </figcaption>
+  <table class="box">
+    <tr>
+      <td><img style="height:calc(518px / 2); margin:.125rem 1rem" src="07a.png">
+      <td><img style="height:calc(100px / 2); margin:.125rem 3rem" src="08a.png">
+  </table>
+</figure>
+
+<p>Cette graphie se décompose en trois graphèmes :
+
+<table class="symbol-table">
+  <tr>
+    <td><img style="height:calc(67px / 2)" src="08b.png">
+    <td>Ce graphème représente la configuration <span translate=no>/B<sup>S</sup>/</sup> exécutée par la
+      main non dominante sur le plan horizontal, la paume tournée vers
+      le haut, avec les doigts orientés à 45 degrés entre l’avant et le côté
+      droit.
+  <tr>
+    <td><img style="height:calc(57px / 2)" src="08c.png">
+    <td>Ce graphème représente la configuration /1°/ exécutée par la
+      main dominante sur le plan horizontal, la paume tournée vers le
+      bas, avec les jointures métacarpiennes orientées vers l’avant.
+  <tr>
+    <td><img style="height:calc(56px / 2)" src="08d.png">
+    <td>Ces deux flèches représentent un mouvement linéaire sur le
+      plan horizontal à 45 degrés entre l’avant et le côté droit, exécuté
+      deux fois.
+</table>
+
+<p>Ce signe a été écrit en fonction du point de vue du signeur, c’est-à-dire que
+l’image écrite du signe correspond à ce que le signeur perçoit lorsqu’il exécute ce
+signe et non à ce que l’interlocuteur perçoit lorsqu’il regarde le signeur. C’est
+pourquoi le mouvement du signe écrit semble être contradictoire avec le mouvement
+du signe illustré.
+
+<p>Devant des possibilités aussi variées de représentation écrite d’une LS, nous
+proposons dans le tableau 1 une typologie qui nous permettra de mieux comprendre et
+comparer les caractéristiques des systèmes d’écriture et de transcription disponibles
+pour les LS.
+
+<a id=9><img src="09.png"></a>
+
+<style>
+  [xxx] {
+      text-align: center;
+      border-collapse: collapse;
+      border-bottom: 2px solid #000;
+      & td, & th {
+          padding: .25rem 0;
+          vertical-align: top;
+          border: 0 solid #000;
+          &:not(:empty) { border-top-width: 2px; }
+      }
+      & caption {
+          font-weight: bold;
+          margin: 1rem;
+      }
+  }
+</style>
+<table xxx>
+  <caption>
+    Tableau 1 : Typologie des systèmes d’écriture et de transcription pour les langues
+    signées
+  </caption>
+  <tr>
+    <th>Types de systèmes
+    <th>Niveaux de représentation
+    <th>Caractéristiques des graphèmes
+    <th>Exemples de systèmes
+  <tr>
+    <td>Systèmes de transcription
+    <td>Phonologique
+    <td>Alphanumériques unilinéaires
+    <td>Liddell-Johnson
+  <tr>
+    <td></td>
+    <td></td>
+    <td>Iconiques unilinéaires
+    <td>HamNoSys
+  <tr>
+    <td></td>
+    <td></td>
+    <td>Semi-iconiques unilinéaires
+    <td>Jouison
+  <tr>
+    <td></td>
+    <td></td>
+    <td>Mixtes dactylologiques unilinéaires
+    <td>Stokoe
+  <tr>
+    <td></td>
+    <td>Sémantique
+    <td>Alphanumériques unilinéaires
+    <td>Gloses, Berkeley TS
+  <tr>
+    <td></td>
+    <td></td>
+    <td>Alphanumériques multilinéaires
+    <td>Gloses
+  <tr>
+    <td>Systèmes d’écriture
+    <td>Phonologique
+    <td>Alphanumériques unilinéaires
+    <td>Proposition Tilkin
+  <tr>
+    <td></td>
+    <td></td>
+    <td>Iconiques unilinéaires
+    <td>SignFont
+  <tr>
+    <td></td>
+    <td></td>
+    <td>Iconiques bidimensionnels
+    <td>Sutton’s SignWriting
+</table>
+
+<h2>2.1. Types de systèmes</h2>
+
+<p>Parmi les types de systèmes possibles, nous retrouvons les systèmes de
+transcription et les systèmes d’écriture. Cette distinction est importante à faire
+puisqu’elle conditionne directement l’ensemble des autres caractéristiques. Un
+système de transcription est généralement utilisé pour la description d’une langue,
+principalement dans les recherches en linguistique. Que ce soit pour des études sur la
+phonologie, la syntaxe, la morphologie ou la sémantique des LS, les chercheurs
+doivent avoir recours à un moyen quelconque de représenter la langue par écrit afin
+de pouvoir traiter leurs données et diffuser leurs recherches, leurs données et leurs
+résultats. De plus, avec l’utilisation croissante de l’informatique, notamment pour la
+saisie et le traitement des données et pour la synthèse des LS, le besoin d’un support
+écrit ne cesse de croître.
+
+<p>Le premier objectif des systèmes de transcription est de pouvoir rendre à l’écrit
+tous les détails pertinents pour la recherche et la description de la langue. La liste de
+ces détails peut être longue. Par exemple, on peut vouloir transcrire tous les
+phonèmes d’une langue, tous les traits des phonèmes, toutes les informations
+morphologiques et sémantiques contenues dans un mot ou un signe, etc. Ces systèmes
+sont donc susceptibles d’être modifiés et révisés régulièrement afin de s’adapter aux
+besoins de la recherche et aux données analysées.
+
+<p>Pour leur part, les systèmes d’écriture destinés à un usage courant par les locuteurs
+d’une langue ont été conçus dans un but de communication dans cette langue. Dans
+ce type de système, la représentation de la langue par écrit doit être assez détaillée
+pour que les liens soient relativement évidents entre la modalité orale et la modalité
+écrite. Cependant, peu de systèmes d’écriture représentent une langue avec une
+grande précision. Le niveau de détails de la représentation doit être suffisant pour la
+<a id=10><img src="10.png"></a>
+compréhension sans alourdir la communication. Pour les langues orales, ces systèmes
+équivalent à des conventions pouvant être issues d’une analyse plus ou moins
+approfondie de la langue à représenter et possiblement conditionnées par des facteurs
+politiques, historiques ou sociologiques. Une fois établies et fixées, ces conventions
+sont peu susceptibles de subir de changements. Avec le temps, elles tendent à
+s’éloigner de la langue orale représentée si aucune mesure n’est prise pour adapter
+régulièrement la modalité écrite à l’évolution de la modalité orale. Ce phénomène
+explique en partie le décalage fréquent qui existe entre une langue écrite et une
+langue orale.
+
+<p>Quelques systèmes d’écriture ont été proposés pour représenter les LS. Tout
+comme les systèmes d’écriture des langues orales, les systèmes d’écriture des LS ont
+été conçus pour représenter les signes à l’écrit avec un niveau de détails relativement
+limité afin de ne pas compromettre l’économie de ces systèmes et leur apprentissage
+par les locuteurs. Par conséquent, les systèmes d’écriture des LS comportent souvent
+beaucoup moins de graphèmes que ceux utilisés en transcription.
+
+<h2>2.2. Niveaux de représentation</h2>
+
+<p>Les systèmes de transcription et d’écriture s’articulent sur un niveau de
+représentation, c’est-à-dire l’unité linguistique de base représentée par un graphème,
+comme le mot, la syllabe, la consonne, le phonème. Tout comme les systèmes
+d’écriture et de transcription pour les langues orales, les systèmes écrits pour les LS
+peuvent aussi avoir différents niveaux de représentation. Dans l’état actuel des
+recherches sur les LS, on distingue principalement deux niveaux de représentation
+pour les systèmes écrits, soit le niveau phonologique et le niveau sémantique. Dans
+les systèmes basés sur le niveau phonologique, les graphèmes représentent des
+phonèmes. Par conséquent, un signe doit être écrit avec des graphèmes représentant
+l’ensemble des phonèmes de ce signe. On aura alors dans un même système une série
+de graphèmes pour représenter les configurations manuelles, une autre série pour les
+lieux d’articulation, une autre série pour les mouvements, etc.
+
+<p>Les systèmes basés sur le niveau sémantique, pour leur part, représentent
+principalement le sens des signes. Ces systèmes sont principalement utilisés lorsqu’il
+n’est pas utile de transcrire le niveau phonologique dans une recherche, par exemple
+dans des analyses sur des aspects syntaxiques, morphologiques ou discursifs. Ces
+systèmes permettent seulement une représentation des unités porteuses de sens, sans
+distinguer les unités non porteuses de sens. À notre connaissance, aucun système
+d’écriture proposé pour les LS n’est basé sur le niveau sémantique. Ce niveau de
+représentation semble exclusivement utilisé en transcription.
+
+<h2>2.3. Caractéristiques des graphèmes</h2>
+
+<p>Outre le type de système et le niveau de représentation, les systèmes d’écriture et
+de transcription pour les LS présentent d’autres caractéristiques quant à l’aspect et à
+l’arrangement des graphèmes utilisés. L’aspect des graphèmes réfère à la forme
+graphique des caractères utilisés par un système. Cette forme peut découler du type
+de relation (arbitraire ou motivée) entre les graphèmes et les unités linguistiques
+<a id=11><img src="11.png"></a>
+représentées. Dans notre analyse, nous aborderons les aspects alphanumérique,
+dactylologique, iconique, semi-iconique et mixte.
+
+<h3>Alphanumérique</h3>
+
+<p>Un système d’écriture ou de transcription peut être considéré alphanumérique
+quand son inventaire de graphèmes est composé de lettres, de chiffres et parfois
+d’autres caractères typographiques courants comme la barre oblique, le tiret, etc.
+Aïnsi, dans un système alphanumérique, les graphèmes sont souvent limités à ce
+qu’on peut retrouver dans la norme ASCII (<i>American Standard Code for Information
+Interchange</i>), c’est-à-dire la table de codage de 128 caractères utilisée couramment en
+informatique. Les raisons qui motivent le choix de ce type de graphème pour un
+système d’écriture ou de transcription d’une LS découlent surtout du souci de
+disposer d’un système pouvant être utilisable sur un ordinateur avec des logiciels
+courants de traitement de texte ou de données, sans nécessiter de logiciels spécialisés
+et spécifiques à l’écriture ou à la transcription en LS. Dans les systèmes
+alphanumériques, la forme des graphèmes a généralement peu ou pas de lien avec la
+forme des phonèmes.
+
+<p>Dans les systèmes de transcription, le recours à des caractères alphanumériques
+induit souvent des références à la langue orale des chercheurs. Par exemple, Île
+système de Liddell et Johnson décrit certaines caractéristiques du mouvement avec
+des abréviations comme « str » (<i translate=no>straight</i>, en ligne droite), « rnd » (<i translate=no>round</i>, arrondi),
+« arc » (en arc de cercle) ou « acc » (accéléré). Les systèmes à gloses, pour leur part,
+font franchement référence à la langue orale en y empruntant des mots ayant un sens
+similaire aux signes décrits. Par exemple, dans les figures 5 et 6, nous avons identifié
+le signe illustré par le mot ÉCRIRE écrit en majuscules. Cette glose peut donc
+représenter ce signe par le recours à un mot d’une langue orale ayant le même sens.
+Les systèmes alphanumériques, en plus d’être conçus pour des fins de compatibilité
+avec les outils informatiques servant aux recherches, peuvent donc aussi inclure des
+indications mnémoniques, comme des références à des mots de langues orales, pour
+en faciliter l’apprentissage et l’utilisation. La représentation des LS par ces systèmes
+peut donc passer par une description des signes à l’aide de références provenant de
+langues orales. Il est à noter que dans les systèmes aiphanumériques que nous
+connaissons, seuls les systèmes de transcription utilisent des références à des langues
+orales. Le système d’écriture alphanumérique (la proposition de Tilkin) que nous
+avons inclus à notre typologie ne comporte pas de références aux langues orales. Le
+choix de caractères alphanumériques dans ce système répond seulement à des besoins
+de compatibilité informatique. La relation entre les graphèmes et les phonèmes est
+généralement arbitraire,
+
+<h3>Dactylologique</h3>
+
+Les systèmes dactylologiques, regroupés dans notre typologie dans l’ensemble des
+variantes du système de Stokoe, représentent certaines configurations manuelles
+servant pour l’alphabet manuel (c’est-à-dire l’ensemble des configurations manuelles
+choisies pour représenter les lettres de l’alphabet) ou pour signer des chiffres à l’aide
+de caractères alphanumériques (des lettres et des chiffres) correspondant à ces
+configurations. Par exemple, comme le montre la figure 7, on peut représenter en
+<a id=12><img src="12.png"></a>
+LSQ la configuration avec les doigts fermés et le pouce ouvert sur le côté de la main
+par la lettre A puisque cette configuration représente la lettre A dans lalphabet
+manuel de la LSQ. La configuration formée des doigts ouverts et collés avec le pouce
+fermé sur la paume de la main est représentée par B puisque cette configuration
+représente cette lettre dans l’alphabet manuel de la LSQ. Ainsi, pour noter ces
+configurations par écrit, on peut utiliser des caractères alphanumériques qu’on
+associera aux configurations correspondant à ces lettres dans l’alphabet manuel de la
+LS à écrire. Ce type de système peut aussi comporter des diacritiques afin d’identifier
+des configurations voisines de celles qu’on retrouve dans Paiphabet manuel. C’est le
+type de système de transcription des configurations manuelles qu’utilisent Dubuisson
+<i>et al.</i> (1999) dans la Grammaire descriptive de la ELSQ. Dans ce cas, la lettre
+représente les doigts sélectionnés (ou les doigts jouant un rôle primaire dans la
+configuration), un diacritique précise le comportement des doigts (pliés, courbés, etc.)
+et un autre diacritique représente le pouce (ouvert sur le côté, en parallèle avec la
+main, fermé sur la paume ou sur les doigts, etc.). Par exemple, comme on le retrouve
+dans la figure 7, on distinguera une configuration avec les doigts fermés et le pouce
+fermé sur les doigts en la représentant par <span translate=no>/A<sup>S</sup>/</span> (le « A » représente les doigts fermés
+et le « s » représente le pouce fermé) d’une autre configuration avec les doigts fermés
+et le pouce fermé sur le côté de la main en notant celle-ci par /A"/ (le « A » représente
+les doigts fermés et le guillemet représente le pouce collé sur le côté). Il est à noter
+qu’un système ne peut être exclusivement dactylologique puisque cet aspect ne sert
+qu’à représenter les configurations manuelles et ne peut s’appliquer aux autres
+paramètres du signe comme le lieu d’articulation ou le mouvement.
+
+<figure>
+  <style>
+    [xxx3] {
+        border-collapse: collapse;
+        margin: 1rem auto;
+        & td {
+            border: 2px solid #000;
+            padding: .25rem;
+            width: 8.25rem;
+            vertical-align: bottom;
+        }
+    }
+  </style>
+  <figcaption>
+    Figure 7 : Notations dactylologiques de quelques configurations
+  </figcaption>
+  <table xxx3>
+    <tr>
+      <td><img style="height:calc(173px / 2)" src="12a.png"><br>A
+      <td><img style="height:calc(275px / 2)" src="12b.png"><br>B
+      <td><img style="height:calc(174px / 2)" src="12c.png"><br><span translate=no>/A<sup>S</sup>/</span>
+      <td><img style="height:calc(176px / 2)" src="12d.png"><br>/A"/
+  </table>
+</figure>
+
+<h3>Iconique</h3>
+
+<p>L’aspect iconique d’un système d’écriture ou de transcription découle du fait que
+le graphème représente un phonème en en illustrant la forme. Ainsi, la forme du
+graphème réfère à la forme du phonème représenté. Il est important de distinguer le
+caractère iconique ou arbitraire de la relation entre un graphème et un phonème du
+choix arbitraire d’un graphème pour représenter une unité linguistique quelconque.
+Dans notre analyse et notre discussion, lorsque nous parlons d’iconicité ou
+d’arbitraire, nous ne le faisons qu’en fonction de la relation entre un graphème et ce
+qu’il représente. La notion de choix arbitraire entre plusieurs graphèmes possibles,
+qu’ils soient iconiques ou non, pour représenter une unité linguistique n’est pas
+pertinente pour notre propos puisque ce choix est invariablement arbitraire, peu
+<a id=13><img src="13.png"></a>
+importe le type de relation (arbitraire ou motivée) entre les graphèmes et ce qu’ils
+représentent.
+
+<p>Le degré d’iconicité peut être variable selon le système. Par exemple, les systèmes
+SignWriting et HamNoSys représentent les configurations manuelles par des dessins
+de la main ayant une forme similaire à celle des configurations représentées, ce qui
+exprime l’iconicité relativement directe de ces systèmes. Les figures 8 et 9 illustrent
+des configurations dans ces systèmes. Le système SignFont, pour sa part, opte pour
+une iconicité plus métonymique, c’est-à-dire que le graphème tend à représenter la
+partie la plus signifiante (comme les doigts sélectionnés) ou la plus saillante du
+phonème. Par exemple, dans les configurations manuelles illustrées dans la figure 10,
+seuls les doigts significatifs des configurations sont représentés par les graphèmes,
+sans que l’ensemble de la main ne soit nécessairement inclus dans la représentation.
+En fait, tout ce système est conçu en fonction de maintenir un compromis entre une
+certaine iconicité et une économie du nombre de graphèmes représentant les
+constituants les plus signifiants des signes. Le système SignFont constitue réellement
+un système d’écriture, au sens où il cherche à représenter à l’écrit les aspects
+importants d’une langue sans offrir une représentation phoñologique détaillée, alors
+qu’un système de transcription comme HamNoSys vise au contraire à transcrire tous
+les détails du comportement des articulateurs, sans considérer Pimportance du facteur
+de l’économie de lecture et d’écriture.
+
+<figure>
+  <figcaption>
+    Figure 8 : Notation iconique de quelques configurations avec SignWriting
+    (Sutton, 1996)
+  </figcaption>
+  <table xxx3>
+    <tr>
+      <td style="border-bottom-width:0"><img style="height:calc(266px / 2)" src="13a.png">
+      <td style="border-bottom-width:0"><img style="height:calc(263px / 2)" src="13b.png">
+      <td style="border-bottom-width:0"><img style="height:calc(186px / 2)" src="13c.png">
+      <td style="border-bottom-width:0"><img style="height:calc(266px / 2)" src="13d.png">
+    <tr>
+      <td style="border-top-width:0"><img style="height:calc(88px / 2)" src="13a2.png">
+      <td style="border-top-width:0"><img style="height:calc(49px / 2)" src="13b2.png">
+      <td style="border-top-width:0"><img style="height:calc(45px / 2)" src="13c2.png">
+      <td style="border-top-width:0"><img style="height:calc(65px / 2)" src="13d2.png">
+  </table>
+</figure>
+
+<figure>
+  <figcaption>
+    Figure 9 : Notation iconique de quelques configurations avec HamNoSys
+    tiré de Prillwitz et Zienert (1990)
+  </figcaption>
+  <table xxx3>
+    <tr>
+      <td style="border-bottom-width:0"><img style="height:calc(250px / 2)" src="13e.png">
+      <td style="border-bottom-width:0"><img style="height:calc(253px / 2)" src="13f.png">
+      <td style="border-bottom-width:0"><img style="height:calc(249px / 2)" src="13g.png">
+      <td style="border-bottom-width:0"><img style="height:calc(253px / 2)" src="13h.png">
+      <td style="border-bottom-width:0"><img style="height:calc(254px / 2)" src="13i.png">
+    <tr>
+      <td style="border-top-width:0"><img style="height:calc(24px / 2)" src="13e2.png">
+      <td style="border-top-width:0"><img style="height:calc(30px / 2)" src="13f2.png">
+      <td style="border-top-width:0"><img style="height:calc(28px / 2)" src="13g2.png">
+      <td style="border-top-width:0"><img style="height:calc(29px / 2)" src="13h2.png">
+      <td style="border-top-width:0"><img style="height:calc(29px / 2)" src="13i2.png">
+  </table>
+</figure>
+
+<a id=14><img src="14.png"></a>
+
+<figure style="clear:both">
+  <figcaption>
+    Figure 10 : Configurations du système SignFont
+    tiré de Mclntire, Newkirk, Hutchins & Poizner (1987)
+  </figcaption>
+  <div class="box">
+    <img style="height:35rem;transform:rotate(-1deg);margin: .5rem 1rem" src="14a.png">
+  </div>
+</figure>
+
+<p>Nous n’avons illustré que la représentation écrite des configurations, mais les
+graphèmes iconiques de ces systèmes permettent aussi de représenter chacun des
+éléments phonologiques (les mouvements, les lieux d’articulations, etc.), comme le
+montre la figure 11.
+
+<figure>
+  <a id=15><img src="15.png"></a>
+  <figcaption>
+    Figure 11 : « Lire » écrit en SignWriting (haut) et en HamNoSys (bas)
+  </figcaption>
+  <table xxx3>
+    <tr>
+      <td><img style="height:calc(540px / 2);margin:.125rem 1rem" src="15a.png">
+      <td style="vertical-align:middle">
+        <img style="height:calc(179px / 2)" src="15b.png">
+        <br><br><br><br><img style="height:calc(59px / 2.5)" src="15c.png">
+  </table>
+</figure>
+
+<p>Dans cet exemple, on peut remarquer le contraste entre l’approche analytique de
+HamNoSys et l’approche synthétique de SignWriting. Dans la première paire de
+crochets [ ], la notation HamNoSys rend compte de la configuration de chaque main
+et de l’orientation des mains. Par exemple, les quatre graphèmes <img style="height:calc(43px / 2.5)" src="15d.png"> signifient
+respectivement que la main dominante prend la configuration <span translate=no>/V<sup>S</sup>/</span>, que les doigts sont
+orientés vers le haut et vers la gauche du signeur, et que la paume est orientée à 45
+degrés entre l’avant et le bas. La main non dominante est décrite de façon aussi
+précise (<img style="height:calc(38px / 2.5)" src="15e.png"> : « configuration /B’/ », « doigts orientés vers l’avant-droite »,
+« paume orientée vers le signeur »). La graphie en SignWriting comporte moins de
+précision et met les graphèmes en relation entre eux pour représenter une part des
+composantes du signe. Par exemple, en SignWriting, chaque configuration est
+représentée par un graphème ressemblant à la forme des mains, mais l’orientation de
+la paume est intégrée à ces graphèmes par la couleur de ceux-ci (noir et blanc, par
+contraste à blanc seulement pour « paume vers le signeur » et noir seulement pour
+« dos de la main vers le signeur ») plutôt que par des graphèmes supplémentaires. De
+plus, l’orientation des doigts est donnée par l’arrangement des graphèmes (les doigts
+de la main dominante sont orientés vers la main non dominante) plutôt que par une
+description géométrique de cette orientation (« vers le haut et vers la gauche »). Le
+même principe vaut pour le lieu d’articulation. En HamNoSys, les graphèmes <img style="height:calc(50px / 2.5)" src="15f.png">
+décrivent le lieu d’articulation comme étant « devant le signeur » et « près du corps »,
+alors que cette information est donnée en SignWriting par la position des
+configurations manuelles sous le graphème de la tête (qui indique aussi la direction
+du regard vers la main non dominante, une information qui n’est pas donnée en
+HamNoSys). L’absence de graphèmes représentant un contact ou une partie du corps
+précise implique que le signe est exécuté dans l’espace neutre. Enfin, le mouvement
+est représenté en HamNoSys par les graphèmes <img style="height:calc(55px / 2.5)" src="15g.png">. La flèche pointée vers
+le bas signifie « mouvement vers le bas », la flèche pointée vers la droite avec queue
+en V indique un changement de paramètres à être précisé par les graphèmes suivants,
+les deux graphèmes subséquents précisent ce changement en donnant une nouvelle
+orientation : « doigts orientés vers la gauche du signeur » et « paume vers le bas ». De
+plus, le graphème « + » indique que ce qui est indiqué entre crochets est répété une
+autre fois. En SignWriting, les deux flèches à double barre représentent le même
+<a id=16><img src="16.png"></a>
+mouvement vers le bas répété deux fois, d’où la répétition des flèches (par contraste,
+deux flèches à barre simple orientées de la même façon auraient représenté un
+mouvement vers l’arrière répété deux fois). Le changement d’orientation de la main
+qu’implique ce mouvement n’est pas précisé, puisqu’il n’ajoute pas de sens au signe.
+
+<h3>Semi-iconique</h3>
+
+<p>Nous avons identifié le système Jouison (1990) comme étant semi-iconique, car
+bien que la forme de ses graphèmes soit déterminée par la forme des phonèmes, cette
+iconicité n’est pas aussi transparente et intuitive que celle qu’on peut retrouver dans
+des systèmes comme HamNoSys ou SignWriting. En fait, l’iconicité du système
+Jouison est plutôt interne au système. Par exemple, comme le montre la figure 12, les
+configurations sont représentées sur un patron imaginaire composé de quatre lignes
+droites horizontales, un peu à la manière d’une portée en écriture musicale, et d’une
+ligne droite verticale. Chaque ligne horizontale sert à ancrer un doigt, avec l’index sur
+la ligne la plus haute et l’auriculaire sur la ligne la plus basse. La ligne verticale sert
+de division entre les doigts dits « fermés » et les doigts « ouverts ». À partir de ce
+patron, on dessine des courbes et des droites selon l’état des doigts. Un demi-cercle
+avec la courbure orientée vers la droite sert à représenter un ensemble de doigts
+fermés. Cet ensemble est défini par la position de ce demi-cercle sur le patron de
+lignes horizontales. Ainsi, dans la figure 12, ce demi-cercle recoupe les trois
+premières lignes du haut, ce qui signifie que l’index, le majeur et l’annulaire sont
+repliés. De la même façon, un demi-cercle avec la courbure vers la gauche représente
+un ensemble de doigts ouverts et écartés. Une droite verticale représente un ensemble
+de doigts ouverts et collés. Une ligne oblique représente deux doigts consécutifs dont
+l’un est ouvert et l’autre, fermé. Par exemple, une oblique comme celle-ci « / »
+signifie que le doigt du haut est ouvert et celui du bas est fermé, alors que cette
+oblique « \ » représente le contraire. Sur la figure 12, une ligne oblique « \ » relie
+lannulaire et auriculaire, signifiant que l’annulaire est fermé alors que l’auriculaire
+est ouvert. Au milieu de cet ensemble de courbures et de droites peut figurer le pouce.
+Celui-ci n’est représenté par une ligne droite horizontale que lorsqu’il est ouvert. S’il
+est fermé, la configuration ne comporte aucune indication sur le pouce.
+
+<a id=17><img src="17.png"></a>
+
+<figure style="clear:both">
+  <figcaption>
+    Figure 12 : Représentation d’une configuration avec le système Jouison (1990)
+  </figcaption>
+  <table xxx3 style="border:2px solid #000 !important">
+    <tr>
+      <td style="border:0;vertical-align:middle;padding:1rem 3rem">
+        <img style="height:calc(353px / 2)" src="17a.png">
+      <td style="border:0">
+        <style>
+          .d0f87b {
+              border-collapse: collapse;
+              & td { border: 0 }
+          }
+        </style>
+        <table class="d0f87b">
+          <tr>
+            <td>
+            <td rowspan=5 colspan=2><img style="height:calc(493px / 2)" src="17b.png">
+            <td>index
+          <tr>
+            <td>
+            <td>majeur
+          <tr>
+            <td><span style="position:relative;top:-1rem">pouce</span>
+            <td>annul.
+          <tr>
+            <td>
+            <td>auric.
+          <tr>
+            <td style="height:25px">
+            <td>
+          <tr>
+            <td>
+            <td>fermé
+            <td>ouvert
+            <td>
+        </table>
+  </table>
+</figure>
+
+<p>Bien que Jouison explique le fonctionnement de son système de cette façon pour
+les configurations, les caractères qu’il emploie sont un peu plus compacts et ne
+représentent pas les lignes horizontales et verticales illustrées à la figure 13. Cette
+économie a une incidence sur l’iconicité des caractères. En effet, la droite verticale
+déterminant l’ouverture ou la fermeture des doigts ne semble plus signifiante dans la
+figure 13. Seule la position des courbes et des droites indique la position des doigts.
+
+<figure>
+  <figcaption>
+    Figure 13 : Quelques configurations notées avec le système Jouison
+  </figcaption>
+  <table xxx3>
+    <tr>
+      <td style="border-bottom-width:0"><img style="height:calc(272px / 2)" src="13a.png">
+      <td style="border-bottom-width:0"><img style="height:calc(266px / 2)" src="13b.png">
+      <td style="border-bottom-width:0"><img style="height:calc(188px / 2)" src="13c.png">
+      <td style="border-bottom-width:0"><img style="height:calc(269px / 2)" src="13d.png">
+    <tr>
+      <td style="border-top-width:0"><img style="height:calc(106px / 2)" src="17a2.png">
+      <td style="border-top-width:0"><img style="height:calc(109px / 2)" src="17b2.png">
+      <td style="border-top-width:0"><img style="height:calc(108px / 2)" src="17c2.png">
+      <td style="border-top-width:0"><img style="height:calc( 82px / 2)" src="17d2.png">
+  </table>
+</figure>
+
+<p>Ce n’est qu’une fois qu’on a compris le principe de ce système qu’on arrive à
+reconnaître et à prédire les différentes configurations manuelles représentées.
+Cependant, sans l’explication du fonctionnement de ce type de représentation, peu
+d’indices permettent de deviner qu’il s’agit de configurations manuelles, alors que les
+graphèmes de systèmes comme HamNoSys ou SignWriting sont plus explicites et
+tendent vers plus de transparence en eux-mêmes. Les autres graphèmes du système de
+Jouison nécessitent aussi une certaine part d’explication pour comprendre ce qu’ils
+représentent.
+
+<h3>Mixte</h3>
+
+<p>La catégorie mixte regroupe des systèmes qui utilisent plusieurs types de formes
+de caractères. Par exemple, les variantes dérivées du système de Stokoe utilisent des
+<a id=18><img src="18.png"></a>
+caractères alphanumériques pour représenter les configurations, des caractères plus
+iconiques pour représenter certains mouvements et certains lieux d’articulation ainsi
+que d’autres caractères plus arbitraires ou plus opaques pour représenter d’autres
+aspects des signes, comme le contact ou le comportement non-manuel. La figure 14
+illustre la phrase « Papa Ours lit le journal » signée en ASL, similaire en LSQ.
+Chaque signe est transcrit en système Stokoe. On peut remarquer que les
+configurations sont représentées par des chiffres et des lettres (par exemple, la
+configuration de PAPA avec tous les doigts ouverts et écartés est représentée par 5, la
+configuration de OURS avec les doigts courbés et écartés est représentée par C, etc.)
+les lieux d’articulation sont représentés par des caractères plus iconiques (le front de
+PAPA par un demi-cercle, le tronc de OURS par une paire de crochets} et d’autres
+aspects des signes sont représentés par des graphèmes plus opaques (le contact glissé
+des mains sur le tronc dans OURS est représenté par un x minuscule, le mouvement
+d’écartement des bras dans JOURNAL est représenté par le symbole mathématique
+de division).
+
+<figure>
+  <figcaption>
+    Figure 14 : Transcription d’une phrase signée en système de notation Stokoe
+    (tiré de www.signwriting.org)
+  </figcaption>
+  <div class="box illustrated-example">
+    <div class="flexwrap">
+      <div>
+        <div class="h145"><img style="height:calc(278px / 2)" src="18a.png"></div>
+        PAPA
+        <div class="h30"><img style="height:calc(60px / 2.5)" src="18a2.png"></div>
+      </div>
+      <div>
+        <div class="h145"><img style="height:calc(274px / 2)" src="18b.png"></div>
+        OURS
+        <div class="h30"><img style="height:calc(59px / 2.5)" src="18b2.png"></div>
+      </div>
+      <div>
+        <div class="h145"><img style="height:calc(278px / 2)" src="18c.png"></div>
+        JOURNAL
+        <div class="h30"><img style="height:calc(68px / 2.5)" src="18c2.png"></div>
+      </div>
+      <div>
+        <div class="h145"><img style="height:calc(277px / 2)" src="18d.png"></div>
+        LIRE
+        <div class="h30"><img style="height:calc(56px / 2.5)" src="18d2.png"></div>
+      </div>
+    </div>
+    <p style="margin:.5rem"><i>Papa Ours lit le journal.</i>
+  </div>
+</figure>
+
+<p>La description des aspects des graphèmes nous amène à aborder le type de relation
+qui peut exister entre les graphèmes d’un système et les unités linguistiques
+(phonèmes, morphèmes, etc.) qu’ils représentent. Pour notre analyse, nous pouvons
+retenir quatre types de relations entre les graphèmes et les unités linguistiques :
+l’iconicité transparente, l’iconicité schématique, la mnémonicité et l’arbitraire.
+L’iconicité transparente se définit comme une relation évidente entre la forme d’un
+graphème et la forme de ce qu’il représente. Le SignWriting fonctionne de façon très
+iconique, autant dans la forme des graphèmes que dans leur disposition sur papier
+(voir section suivante). L’iconicité schématique s’apparente à l’iconicité transparente
+en ce sens que la forme d’un graphème peut permettre de prédire la forme de ce qui
+est représenté. Cependant, ce type de relation est soumis à un ensemble de règles de
+construction des graphèmes permettant de faire l’analogie entre la forme du graphème
+et la forme de l’unité linguistique représentée. Si on ne connaît pas ces règles, la
+forme de cette unité peut être difficile à déduire de la forme du graphème. Le système
+de Jouison est un bon exemple de système où les graphèmes sont une sorte de
+schématisation de la forme des phonèmes qu’ils représentent. Une relation
+mnénomique entre un graphème et une unité linguistique découle d’indices, autres
+que celui de la forme, portés par le graphème à propos de ce qui est représenté. Par
+<a id=19><img src="19.png"></a>
+exemple, les systèmes utilisant des caractères alphanumériques pour représenter des
+configurations manuelles faisant partie de l’alphabet manuel (comme les systèmes
+inspirés de Stokoe) peuvent être considérés mnémoniques, car même si la forme du
+graphème n’a rien à voir avec la forme du phonème, ce graphème représente une
+lettre ou un chiffre également représenté par cette configuration dans l’alphabet
+manuel. La mnémonicité découle donc de la parenté de ce que le graphème et l’unité
+linguistique représentent respectivement. Enfin, dans une relation arbitraire, rien ne
+motive l’emploi d’un graphème plutôt qu’un autre pour représenter une unité
+linguistique. Par exemple, dans le système de Tilkin illustré à la figure 5,
+l’association des graphèmes et des phonèmes n’est faite qu’à partir du jumelage de
+deux listes, chacune étant ordonnée de façon arbitraire.
+
+<h2>2.4. Arrangement des graphèmes</h2>
+
+<p>En plus de recourir à différents types de graphèmes, les systèmes d’écriture et
+de transcription divergent également par leur façon d’organiser et d’arranger les
+graphèmes sur papier. Nous avons relevé trois types d’arrangement : unilinéaire,
+multilinéaire et bidimensionnel.
+
+<h3>Unilinéaire</h3>
+
+<p>Un système est unilinéaire lorsqu’il arrange ses graphèmes sur une seule ligne,
+comme le font les systèmes d’écriture et de transcription pour les langues orales. La
+plupart des systèmes d’écriture et de transcription pour les LS sont aussi unilinéaires.
+Cet état de fait découle probablement de deux causes. La première est que nous avons
+l’habitude d’écrire de façon unilinéaire et la deuxième est que les outils informatiques
+d’emmagasinage et de traitement de données, utilisés dans l’étude des LS,
+s’accommodent beaucoup mieux d’un arrangement unilinéaire que multilinéaire ou
+bidimensionnel. La figure 15 illustre une transcription linéaire en HamNoSys. La
+figure 16 montre l’apparence d’un texte linéaire signé en LSF (dont nous n’avons pas
+la traduction) et transcrit avec le système Jouison.
+
+<figure>
+  <figcaption>
+    Figure 15 : Transcription unilinéaire en HamNoSys d’une phrase signée
+    (tiré de www.signwriting.org)
+  </figcaption>
+  <div class="box illustrated-example">
+    <div class="flexwrap">
+      <div>
+        <div class="h145"><img style="height:calc(278px / 2)" src="18a.png"></div>
+        PAPA
+        <div class="h25"><img style="height:calc(40px / 2.5)" src="19a2.png"></div>
+      </div>
+      <div>
+        <div class="h145"><img style="height:calc(274px / 2)" src="18b.png"></div>
+        OURS
+        <div class="h25"><img style="height:calc(42px / 2.5)" src="19b2.png"></div>
+      </div>
+      <div>
+        <div class="h145"><img style="height:calc(278px / 2)" src="18c.png"></div>
+        JOURNAL
+        <div class="h25"><img style="height:calc(42px / 2.5)" src="19c2.png"></div>
+      </div>
+      <div>
+        <div class="h145"><img style="height:calc(277px / 2)" src="18d.png"></div>
+        LIRE
+        <div class="h25"><img style="height:calc(45px / 2.5)" src="19d2.png"></div>
+      </div>
+    </div>
+    <p style="margin:.5rem"><i>Papa Ours lit le journal.</i>
+  </div>
+</figure>
+
+<a id=20><img src="20.png"></a>
+
+<figure style="clear:both">
+  <figcaption>
+    Figure 16 : Extrait d’un texte signé transcrit avec le système de Jouison
+    tiré de Jouison (1990)
+  </figcaption>
+  <div class="box">
+    <img style="transform:rotate(-.4deg); height:calc(564px / 2); padding: 1rem; display: block; margin: auto" src="20a.png">
+  </div>
+</figure>
+
+<p>La linéarité du système engendre une transcription plus descriptive en ce sens
+qu’en lisant un graphème après l’autre, on reconstruit le signe étape par étape. La
+forme globale du signe n’est accessible que lorsque toutes les informations transcrites
+pour ce signe ont été lues successivement. De cette façon, un système linéaire peut
+commencer par transcrire la configuration manuelle, puis son lieu d’articulation, puis
+son action. En fait, l’ordre des composantes du signe peut différer d’un système de
+transcription à l’autre.
+
+<h3>Multilinéaire</h3>
+
+<p>Un système est multilinéaire quand il permet d’écrire un signe ou un énoncé en LS
+sur plusieurs lignes simultanément. Par exemple, on peut avoir un système qui utilise
+une ligne pour la main dominante (Md), une ligne pour les deux mains (2m), une
+ligne pour la main non dominante (Mnd) et une ligne pour la traduction, comme dans
+la transcription en gloses donnée ici et tirée de Parisot (2003).
+
+<p style=text-indent:0>(2)
+<br>Md                 PONT(byz)               BICYCLETTE-TRAVERSER(yz)
+<br>2m    AUTOROUTE(a)           BICYCLETTE(c)
+<br>Mnd
+<br>Sens : <i>La bicyclette traverse le pont au-dessus de l’autoroute.</i>
+
+<p>Dans un autre exemple, tiré de Dubuisson er al. (1999), la transcription peut
+donner le comportement manuel sur la ligne du bas et le comportement non manuel
+sur la ligne du haut. On peut noter que, dans cette phrase, le seul moyen de savoir
+qu’il s’agit d’une interrogative est de disposer de la transcription du comportement
+non manuel, soit les sourcils relevés (SR) et la tête inclinée vers le bas (↓) pendant
+toute la durée de la phrase (gloses surlignées). Autrement, elle pourrait être
+interprétée comme une affirmative.
+
+<p style=text-indent:0>
+<a id=21><img src="21.png"></a>
+  (3)
+<br><span style="border-top:2px solid #000 ">SAVOIR               PTÉ2       PTÉ1       <span style="display:inline-block">SR, ↓<br>   ÉTUDIER</span></span>
+<br>Sens : <i>Tu sais que j’étudie?</i>
+
+<p>Certains systèmes ont adopté un arrangement multilinéaire afin de pouvoir rendre
+compte de l’action simultanée des articulateurs puisque cette simultanéité semblait
+moins évidente à transcrire avec des systèmes unilinéaires. Le fonctionnement de
+l’écriture multilinéaire rappelle celui de l’écriture musicale sur des portées permettant
+de voir aussi bien l’enchaînement des notes que les notes jouées simultanément. À cet
+égard, un système multilinéaire peut rendre compte d’une certaine part de
+simultanéité dans les signes en regroupant des articulateurs sur plusieurs lignes.
+
+<h3>Bidimensionnel</h3>
+
+<p>Un système bidimensionnel représente les signes en disposant les graphèmes sur
+un plan à deux dimensions plutôt que sur une seule dimension (comme les systèmes
+uni- où multilinéaires). Dans l’exemple de SignWriting donné à la figure 17, les
+différents graphèmes sont disposés sur une surface bidimensionnelle de telle sorte que
+leur arrangement rend compte de l’organisation spatiale des phonèmes dans la
+production d’un signe. La figure 18 illustre la paire minimale des signes PAPA et
+MAMAN, qui se distinguent uniquement par leur lieu d’articulation.
+
+<figure>
+  <figcaption>
+    Figure 17 : Transcription bidimensionnelle en SignWriting d’une phrase signée
+    (tiré de www.signwriting.org)
+  </figcaption>
+  <div class="box illustrated-example">
+    <div class="flexwrap">
+      <div>
+        <div class="h145"><img style="height:calc(278px / 2)" src="18a.png"></div>
+        PAPA
+        <div class="h83"><img style="height:calc(122px / 2.5)" src="21a2.png"></div>
+      </div>
+      <div>
+        <div class="h145"><img style="height:calc(274px / 2)" src="18b.png"></div>
+        OURS
+        <div class="h83"><img style="height:calc(205px / 2.5)" src="21b2.png"></div>
+      </div>
+      <div>
+        <div class="h145"><img style="height:calc(278px / 2)" src="18c.png"></div>
+        JOURNAL
+        <div class="h83"><img style="height:calc(189px / 2.5)" src="21c2.png"></div>
+      </div>
+      <div>
+        <div class="h145"><img style="height:calc(277px / 2)" src="18d.png"></div>
+        LIRE
+        <div class="h83"><img style="height:calc(178px / 2.5)" src="21d2.png"></div>
+      </div>
+    </div>
+    <p style="margin:.5rem"><i>Papa Ours lit le journal.</i>
+  </div>
+</figure>
+
+<a id=22><img src="22.png"></a>
+
+<figure style="clear:both">
+  <figcaption>
+    Figure 18 : Exemple de différenciation de paires minimales en SignWriting
+    (tiré de www.signwriting.org)
+  </figcaption>
+  <table xxx3>
+    <tr>
+      <td style="border-bottom-width:0"><img style="height:calc(431px / 2);margin:.125rem 1rem" src="22a.png">
+      <td style="border-bottom-width:0"><img style="height:calc(430px / 2);margin:.125rem 1rem" src="22b.png">
+    <tr>
+      <td style="border-top-width:0"><img style="height:calc(157px / 2)" src="22a2.png">
+      <td style="border-top-width:0"><img style="height:calc(163px / 2)" src="22b2.png">
+  </table>
+</figure>
+
+<p>Dans le signe PAPA, le bout du pouce touche le côté du front, alors que dans le
+signe MAMAN, il touche le côté du menton. La version écrite en SignWriting de ces
+signes rend compte de cette différence précisément par la position de la main par
+rapport à celle de la tête (il est à noter que le comportement non manuel peut ne pas
+être noté, en SignWriting, s’il n’est pas pertinent au sens du signe). L’arrangement
+des graphèmes tend ici à donner une illustration synthétique des signes plutôt qu’une
+description analytique et séquentielle comme dans les systèmes linéaires (uni ou
+multi). La lecture d’un système bidimensionnel permet d’avoir une vue d’ensemble
+de l’organisation des phonèmes entre eux plutôt qu’une description nécessitant une
+reconstruction mentale du signe.
+
+<h1>Conclusion</h1>
+
+<p>Notre typologie met en relief les différences dans la façon de représenter les LS.
+Ces différences s’expliquent autant par les besoins de représentation (description
+phonologique, représentation syntaxique, écriture courante) et les utilisateurs
+potentiels de ces systèmes (chercheurs, signeurs) que par les contraintes humaines
+(lisibilité, facilité d’utilisation et de mémorisation) ou techniques (traitement
+informatique, échange de données). Le choix d’un système écrit reste donc tributaire
+de toutes ces considérations et la justesse de ce choix repose essentiellement sur une
+bonne définition des caractéristiques de ce qui doit être représenté et des besoins de la
+communauté des utilisateurs.
+
+<h1>Références</h1>
+
+<div hanging><!-- Using APA 7 format. -->
+
+<p>Cuxac, C. (1997) « Iconicité et mouvement en langue des signes française », in <i>Acres
+  de la 6e école d’été. Association pour la recherche cognitive : Le mouvement: des
+  boucles sensori-motrices aux représentations langagières,</i> pp. 205-218.
+
+<p>Cuxac, C. (2000) « Compositionnalité sublexicale morphémique-iconique en langue
+  <a id=23><img src="23.png"></a>
+  des signes française », <i>Recherches linguistiques de Vincennes. Langage et surdité,</i>
+  no. 29, pp. 55-72.
+
+<p>Dubuisson, C., L. Lelièvre, M. Lelièvre, D. Machabée et C. Miller (1996) </i>Grammaire
+  descriptive de la langue des signes québécoise, Tome 2, Le lexique,</i> Montréal,
+  UQAM.
+
+<p>Dubuisson, C., L. Lelièvre et C. Miller (1999) <i>Grammaire descriptive de la langue
+  des signes québécoise, Tome 1, Le comportement manuel et le comportement non
+  manuel,</i> édition revue et augmentée, Montréal, UQAM.
+
+<p>Emmorey, K. (2002) <i>Language cognition and brain insights from SLR,</i> Mahwabh, NJ,
+  Lawrence Erlbaum Associates.
+
+<p>Jouison, P. (1989) « Iconicité et double articulation dans la langue des signes »,
+  <i>Revue Générale de l’Enseignement des Déficients Auditifs,</i> vol. 81, no. 3, pp. 90-106.
+
+<p>Jouison, P. (1990) « Analysis and linear transcription of sign language discourse »,
+  <i>Current trends in European Sign Language Reasearch, Proceedings of the 3rd
+  European Congress on Sign Language Research,</i> Hambourg, Signum Press,
+  pp. 337-353.
+
+<p>Liddell, S. K. (2000) « Indicating verbs and pronouns: Pointing away from
+  agreement », in <i>The signs of language revisited. An anthology to honor Ursula
+  Bellugi and Edward Klima,</i> K. Emmorey et H. Lane (éd.), Mahwah, NJ, Lawrence
+  Erlbaum Associates, pp. 303-320.
+
+<p>Liddell S. K. et R. E. Johnson (1989) « American Sign Language: the phonological
+  base », Sign Language Studies, vol. 64, pp. 195-277.
+
+<p>Melntire, M., D. Newkirk, S. Hutchins et H. Poizner (1987) « Hands and faces : A
+  preliminary inventory for written ASL », in <i>Sign Language Studies,</i> no. 56, pp.
+  197-241.
+
+<p>Moody, B. (1986) <i>La langue des signes, tome 2,</i> Paris, Élipses.
+
+<p>Miller, C. (1994) « A Note on Notation », <i>Signpost,</i> vol. 7, no. 3, pp. 191-202.
+
+<p>Miller, C. et C. Dubuisson (1992) « Les encodages parallèles : un procédé exclusif
+  aux langues signées », <i>Protée - Théorie et pratiques sémiotiques,</i> vol. 20, no. 2,
+  pp. 11-22.
+
+<p>Parisot A.-M. (2003) <i>Accord et clitisation : l’accord des verbes à forme rigide en
+  langue des signes québécoise,</i> thèse de doctorat, Montréal, Université du Québec à
+  Montréal.
+
+<p>Prillwitz, S. et H. Zienert (1990) « Hamburg notation system for Sign Language:
+  Development of a sign writing with computer application ». in <i>Current trends in
+  European Sign Language Research. Proceedings of the 3rd European Congress
+  <a id=24><img src="24.png"></a>
+  on Sign Language Research.</i> S. Prillwitz et T. Vollhaber, (éd.) Hamburg, Signum
+  Press, pp. 355-379.
+
+<p>Stokoe, W. C. (1960) <i>Sign Language Structure,</i> Silver Spring, Maryland, Linstok
+  Press.
+
+<p>Stokoe, W. C. (1976) « The study and use of Sign Language », <i>Sign Language
+  Studies,</i> no. 10, réédition : 2001, Sign Language Studies, vol. 1, no. 4.
+
+<p>Sutton, V. (1996) <i>SignWriting,</i> hyperlien, disponible en ligne à l’adresse électronique
+  suivante : http:/www.signwriting.org.
+
+<p>Tilkin, G. <i>Langue des signes écrite</i>, manuscrit non publié.
+
+</div>
+
+<hr>
+
+<center lang=en translate=no>HTML conversion by zrajm December 2024–January 2025.</center>
+
+<!--[eof]-->
