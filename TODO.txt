@@ -15,6 +15,15 @@ Contact the authors of the Si5s book, see if they know where to get it?
   + Videos https://inframethodology.cbs.dk/?page_id=485
   + Video: https://youtu.be/JP03twetZfo
 * Thesis content
+** My Youtube playlists
+*** SignScript (Grushkin)
+*** ASLwrite (Lapiak)
+*** ASLwrite (Clark)
+*** AusWrit (LinguaPhiliax) ??????? -- private now
+*** Si5s (Arnold)
+*** "Write ASL Signotation" in my youtube playlists
+   https://www.youtube.com/feed/playlists
+*** SignWriting (Sutton)
 ** Use "Writing signed languages" "Coffee" example?
 ** Illustrate all systems in the overview table
    Use one (or a few) different signs: 'world'/'ball' maybe? If multiple,
@@ -118,6 +127,17 @@ Contact the authors of the Si5s book, see if they know where to get it?
 
    After all references in HTML & CSS have been change, also remove the
    symlinks: 'js/', 'www/zr.js' and 'www/zr.css'.
+** TODO Replace redundant DOM traversal code (md.js)
+   DOM tree traversal is implemented in several places, see the traversal in
+   `getBaselineFromTop()` (which used `jQuery.contents()`) but in other places
+   functions domwalk(), walkTheDOM() are also used.
+** TODO Improve autolinks
+   Autolinked URLs should allow for linebreaks before '.', and URL encoding
+   should decoded for the link text.
+   -
+   http://aprendevisagrafia.blogspot.com/
+   https://scholar.google.com/scholar?q=visagraf%C3%ADa
+   -
 ** TODO Use Elemental instead of jQuery
 ** TODO Set viewport (via Javascript?) for mobile phones
    <meta name="viewport" content="width=device-width,initial-scale=1">
