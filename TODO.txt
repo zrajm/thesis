@@ -111,6 +111,13 @@ Contact the authors of the Si5s book, see if they know where to get it?
 **** Wallin's dedication quote from Polysyntetiska tecken
 ** Standardized 'spelling'
 * Webpage Design
+** TODO Change old filename references everywhere
+   js/* -> www/*
+   js/zr.js -> www/md.js
+   js/zr.css -> www/main.css
+
+   After all references in HTML & CSS have been change, also remove the
+   symlinks: 'js/', 'www/zr.js' and 'www/zr.css'.
 ** TODO Use Elemental instead of jQuery
 ** TODO Set viewport (via Javascript?) for mobile phones
    <meta name="viewport" content="width=device-width,initial-scale=1">
