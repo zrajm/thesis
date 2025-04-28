@@ -326,7 +326,7 @@ function main($) {
   }, 0)
 }
 
-import('./elemental.mjs').then(elemental => {
+import('./elemental/elemental.mjs').then(elemental => {
   window.$ = elemental.$                       // for use in browser console
 })
 
