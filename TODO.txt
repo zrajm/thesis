@@ -123,6 +123,9 @@ Contact the authors of the Si5s book, see if they know where to get it?
 **** Wallin's dedication quote from Polysyntetiska tecken
 ** Standardized 'spelling'
 * Webpage Design
+** TODO Use Baremark addons for extending Markdown
+   (Instead of custom adhoc code.)
+** TODO Use Elemental instead of jQuery
 ** TODO Change old filename references everywhere
    js/* -> www/*
    js/zr.js -> www/md.js
@@ -228,4 +231,6 @@ Contact the authors of the Si5s book, see if they know where to get it?
      replace: '<a id="$1"></a>',
    })
    -------------------------------------------------------------------------
+** DONE Include Baremark as submodule
+   CLOSED: [2025-04-28 Mon 14:54]
 * [eof]

@@ -1,3 +1,6 @@
 [submodule "js/elemental"]
 	path = www/elemental
 	url = https://github.com/zrajm/elemental
+[submodule "www/baremark"]
+	path = www/baremark
+	url = git@github.com:zrajm/baremark

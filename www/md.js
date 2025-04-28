@@ -131,7 +131,7 @@ function afterjQueryLoad() {
   if (location.search.match(/\bDEBUG\b/i)) {   // set 'class=DEBUG'
     $('html').addClass('DEBUG')
   }
-  import(`./baremark.js`).then(() => {
+  import(`./baremark/baremark.js`).then(() => {
     baremark().unshift(
       [/<!--.*?-->/gs, ''],                               // strip <!--..-->
       [/\^([^^\n]+)\^/g, '<sup>$1</sup>'],                        // ^...^
