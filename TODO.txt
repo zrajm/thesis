@@ -15,6 +15,9 @@ Contact the authors of the Si5s book, see if they know where to get it?
   + Videos https://inframethodology.cbs.dk/?page_id=485
   + Video: https://youtu.be/JP03twetZfo
 * Thesis content
+** Add examples of writing to “Sign language writing” table
+   The sign for “book” might be a good word to use as an example? Tho,
+   Portugese and Libras have different signs here. :(
 ** My Youtube playlists
 *** SignScript (Grushkin)
 *** ASLwrite (Lapiak)
