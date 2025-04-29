@@ -1,7 +1,5 @@
 -*- org -*-
 
-Contact the authors of the Si5s book, see if they know where to get it?
-
 * Look into
 ** TODO Description of STSwrite
 ** TODO Principles on what construes a good writing system
@@ -144,7 +142,6 @@ Contact the authors of the Si5s book, see if they know where to get it?
    http://aprendevisagrafia.blogspot.com/
    https://scholar.google.com/scholar?q=visagraf%C3%ADa
    -
-** TODO Use Elemental instead of jQuery
 ** TODO Set viewport (via Javascript?) for mobile phones
    <meta name="viewport" content="width=device-width,initial-scale=1">
    <meta name="description" content="Zrajm projekt: Mestadels saker om teckenspråk.">
@@ -209,7 +206,6 @@ Contact the authors of the Si5s book, see if they know where to get it?
 ** TODO Add Baremark autolink URLs
    Showdown have an option to exclude trailing punctuation from autolinked
    URLs (affecting '.!?()').
-** TODO Remove jQuery dependency?
 ** TODO Vertical rhythm?
 * FINISHED
 ** DONE Handle metadata at beginning of Markdown

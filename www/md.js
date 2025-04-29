@@ -1,7 +1,5 @@
 /*-*- js-indent-level: 2 -*-*/
-/*jshint esversion: 9, asi: true, strict: true, browser: true, jquery: true,
-  devel: false */
-/*global baremark */
+// Copyright 2024-2025 by zrajm. Licenses: CC BY-SA (text), GPLv2 (code).
 
 function escapeHtml(text) {
   'use strict'
