@@ -3,9 +3,6 @@
   devel: false */
 /*global baremark */
 
-// Remove 'Javascript missing.' warning.
-document.documentElement.id = 'js'
-
 function escapeHtml(text) {
   'use strict'
   return text.replace(/["&<>]/g, a => (
@@ -169,6 +166,13 @@ function asciify(txt) {
 
 function main($) {
   'use strict'
+
+  // Load stylesheet, remove old when new has loaded.
+  const oldStyle = $('link[rel="stylesheet"]')
+  $('head').append(
+    $(`<link rel=stylesheet href=${import.meta.resolve('./main.css')}>`)
+      .on('load', () => oldStyle.remove()))
+
   const $elem = $('textarea[disabled]:first')
   const markdown = $elem[0].value ?? ''
 
